@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODER Valencia 2026 — Квантовият път на душата</title>
+<link rel="icon" type="image/png" href="images/eye-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-deep: #0a001f;
+  --bg-card: #120828;
+  --bg-elevated: #1a1032;
+  --purple: #6b3dc4;
+  --purple-light: #d5c1ff;
+  --purple-dim: #8b6bd4;
+  --purple-glow: rgba(107, 61, 196, 0.15);
+  --gold: #c9a84c;
+  --gold-light: #e8d48b;
+  --gold-dim: #9a8340;
+  --text-primary: #f9f8f6;
+  --text-secondary: #b8aebb;
+  --text-muted: #958a98;
+  --border-subtle: rgba(107, 61, 196, 0.12);
+  --border-hover: rgba(107, 61, 196, 0.3);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Outfit', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  will-change: auto;
+  backface-visibility: hidden;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+/* LANGUAGE TOGGLE */
+[data-lang="en"], [data-lang="es"] { display: none !important; }
+html.lang-en [data-lang="en"] { display: unset !important; }
+html.lang-en [data-lang="bg"], html.lang-en [data-lang="es"] { display: none !important; }
+html.lang-es [data-lang="es"] { display: unset !important; }
+html.lang-es [data-lang="bg"], html.lang-es [data-lang="en"] { display: none !important; }
+/* Fix block-level lang elements */
+html.lang-en div[data-lang="en"], html.lang-es div[data-lang="es"],
+html.lang-en p[data-lang="en"], html.lang-es p[data-lang="es"],
+html.lang-en h1[data-lang="en"], html.lang-es h1[data-lang="es"],
+html.lang-en h2[data-lang="en"], html.lang-es h2[data-lang="es"],
+html.lang-en h4[data-lang="en"], html.lang-es h4[data-lang="es"] { display: block !important; }
+html.lang-en .hero-meta span[data-lang="en"], html.lang-es .hero-meta span[data-lang="es"],
+html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="es"] { display: inline-block !important; }
+
+.lang-toggle {
+  display: flex; gap: 0; border: 1px solid var(--border-subtle); border-radius: 4px;
+  overflow: hidden; font-size: 11px; font-weight: 500; letter-spacing: 1.5px;
+  margin-left: 16px;
+}
+.lang-toggle button {
+  background: none; border: none; color: var(--text-muted); padding: 6px 12px;
+  cursor: pointer; font-family: var(--sans); font-size: 11px; font-weight: 500;
+  letter-spacing: 1.5px; transition: all 0.3s ease;
+}
+.lang-toggle button.active {
+  background: var(--purple); color: #fff;
+}
+.lang-toggle button:hover:not(.active) { color: var(--purple-light); }
+
+.section-label {
+  font-family: var(--sans); font-size: 16px; font-weight: 500;
+  letter-spacing: 4px; text-transform: uppercase; color: var(--purple-light); margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--serif); font-size: clamp(42px, 6.5vw, 72px); font-weight: 300;
+  line-height: 1.2; color: var(--text-primary); margin-bottom: 24px;
+}
+
+.lang-tag {
+  font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--purple-dim); padding: 2px 8px; border: 1px solid rgba(107, 61, 196, 0.35);
+  border-radius: 2px; line-height: 1; position: relative; top: -1px;
+}
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: background 0.4s ease, padding 0.4s ease;
+}
+.nav.scrolled {
+  background: rgba(10, 0, 31, 0.94); backdrop-filter: blur(16px);
+  padding: 14px 32px; border-bottom: 1px solid var(--border-subtle);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none; transition: opacity 0.3s;
+}
+.nav-logo:hover { opacity: 0.8; }
+.nav-logo img {
+  height: 64px; width: auto;
+}
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 16px; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text-muted); text-decoration: none; transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--purple-light); }
+
+/* HERO */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-end; position: relative;
+  padding: 120px 32px 0; overflow: hidden;
+  background: url('images/valencia-pleiads.jpg') center/cover no-repeat;
+}
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(10, 0, 31, 0.75) 0%, rgba(10, 0, 31, 0.5) 40%, rgba(10, 0, 31, 0.2) 100%);
+  z-index: 0;
+}
+.hero::before {
+  content: ''; position: absolute;
+  top: 10%; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(107, 61, 196, 0.12) 0%, rgba(107, 61, 196, 0.04) 40%, transparent 70%);
+  border-radius: 50%; pointer-events: none;
+  animation: heroGlow 6s ease-in-out infinite alternate;
+}
+@keyframes heroGlow {
+  0% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+}
+.hero::before { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+
+.hero-row {
+  display: flex; align-items: flex-end; gap: 0;
+  max-width: 1200px; width: 100%; position: relative; z-index: 2;
+  opacity: 0; animation: fadeUp 1s ease 0.3s forwards;
+}
+
+.hero-text {
+  flex: 1; text-align: center; padding-bottom: 40px; position: relative; z-index: 2;
+}
+
+.hero-title {
+  font-family: var(--serif); font-size: clamp(56px, 9vw, 128px); font-weight: 300;
+  line-height: 1.05; color: var(--text-primary); margin-bottom: 20px;
+}
+.hero-title em { font-style: italic; color: var(--purple-light); }
+
+.hero-subtitle {
+  display: none;
+}
+
+.hero-meta {
+  display: flex; gap: 20px; align-items: center; justify-content: center;
+  font-size: 24px; font-weight: 500;
+  color: var(--text-primary); letter-spacing: 1px;
+  flex-wrap: wrap;
+  background: rgba(10, 0, 31, 0.7); backdrop-filter: blur(12px);
+  padding: 20px 40px; border-radius: 10px;
+  border: 1px solid rgba(107, 61, 196, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  width: 100%; margin: 0 auto;
+}
+.hero-meta .dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+.hero-location {
+  font-size: 17px; font-weight: 400; color: var(--text-secondary);
+  letter-spacing: 2px; text-transform: uppercase; width: 100%; text-align: center;
+  margin-top: 4px;
+}
+
+.hero-photo-wrapper {
+  flex: 0 0 auto; width: 650px; position: relative;
+  margin-right: -80px; margin-bottom: -100px;
+  overflow: hidden;
+}
+
+.hero-photo {
+  width: 100%; display: block;
+  margin-top: -25%;
+  transform: scale(1.15); transform-origin: center 45%;
+  mask-image:
+    linear-gradient(to bottom, transparent 5%, black 18%, black 65%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 5%, black 18%, black 65%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+.hero-bottom {
+  display: flex; flex-direction: column; align-items: center;
+  width: 100%; position: relative; z-index: 3;
+  margin-top: auto; padding-bottom: 32px;
+}
+.hero-cta {
+  text-align: center; width: 100%;
+  opacity: 0; animation: fadeUp 1s ease 0.8s forwards;
+}
+
+/* Buttons */
+.btn-primary {
+  display: block; width: 100%; max-width: 600px; margin: 0 auto; padding: 26px 40px; text-align: center;
+  background: var(--purple); border: 1px solid var(--purple); border-radius: 6px;
+  color: #fff; font-family: var(--sans); font-size: 18px; font-weight: 500;
+  letter-spacing: 4px; text-transform: uppercase; text-decoration: none;
+  transition: all 0.4s ease; position: relative; overflow: hidden; cursor: pointer;
+}
+.btn-primary::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--purple-dim), var(--purple));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+}
+.btn-primary:hover::before { transform: scaleX(1); }
+.btn-primary:hover { border-color: var(--purple-dim); box-shadow: 0 0 32px rgba(107, 61, 196, 0.3); }
+.btn-primary span { position: relative; z-index: 1; }
+
+.btn-outline {
+  display: inline-block; padding: 18px 56px;
+  border: 1px solid var(--purple-light); color: var(--purple-light); border-radius: 4px;
+  font-family: var(--sans); font-size: 12px; font-weight: 500;
+  letter-spacing: 4px; text-transform: uppercase; text-decoration: none;
+  transition: all 0.4s ease; position: relative; overflow: hidden; cursor: pointer;
+  background: transparent;
+}
+.btn-outline::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--purple-light); transform: scaleX(0);
+  transform-origin: left; transition: transform 0.4s ease;
+}
+.btn-outline:hover::before { transform: scaleX(1); }
+.btn-outline:hover { color: var(--bg-deep); }
+.btn-outline span { position: relative; z-index: 1; }
+
+/* Scroll indicator */
+.scroll-indicator {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  margin-top: 24px;
+  opacity: 0; animation: fadeUp 1s ease 1.4s forwards;
+}
+.scroll-indicator span {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--text-muted); font-weight: 400;
+}
+.scroll-indicator::after {
+  content: ''; width: 1px; height: 32px; background: linear-gradient(to bottom, var(--purple-dim), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* INTRO */
+.intro { padding: 64px 0 64px; border-top: none; position: relative; }
+.intro::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 200px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--purple-dim), transparent);
+}
+.intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.intro-text { font-size: 22px; color: var(--text-secondary); line-height: 2; }
+.intro-text p + p { margin-top: 24px; }
+.intro-quote {
+  font-family: var(--serif); font-size: 34px; font-weight: 300; font-style: italic;
+  color: var(--purple-light); line-height: 1.5; padding-left: 32px;
+  border-left: 2px solid var(--gold-dim); align-self: center;
+}
+
+/* PROGRAM */
+.program { padding: 64px 0; border-top: none; position: relative; }
+.program::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 200px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--purple-dim), transparent);
+}
+.days-wrapper { margin-top: 36px; display: flex; flex-direction: column; gap: 48px; }
+.day-block {
+  background: var(--bg-card); border: 1px solid var(--border-subtle);
+  padding: 48px; position: relative; border-radius: 8px;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.day-block:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 40px rgba(107, 61, 196, 0.06);
+}
+.day-block::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(to right, var(--purple), var(--purple-dim), transparent);
+}
+.day-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
+.day-number {
+  font-family: var(--serif); font-size: 72px; font-weight: 300;
+  color: rgba(107, 61, 196, 0.2); line-height: 1;
+}
+.day-title-group { flex: 1; }
+.day-date {
+  font-size: 18px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--purple-light); margin-bottom: 4px;
+}
+.day-title {
+  font-family: var(--serif); font-size: 38px; font-weight: 400;
+  color: var(--text-primary); line-height: 1.3;
+}
+.day-subtitle { font-size: 20px; color: var(--text-secondary); margin-top: 4px; }
+.day-description {
+  font-size: 20px; color: var(--text-secondary); line-height: 1.8;
+  max-width: 720px; margin-bottom: 20px;
+}
+
+.schedule { display: flex; flex-direction: column; }
+.schedule-item {
+  display: grid; grid-template-columns: 130px 1fr; gap: 24px;
+  padding: 20px 16px; border-top: 1px solid rgba(107, 61, 196, 0.06); align-items: start;
+  border-radius: 6px; transition: background 0.3s ease;
+  margin: 0 -16px;
+}
+.schedule-item:hover { background: rgba(107, 61, 196, 0.04); }
+.schedule-item:last-child { border-bottom: 1px solid rgba(107, 61, 196, 0.06); }
+.schedule-time {
+  font-family: var(--sans); font-size: 19px; font-weight: 500;
+  color: var(--purple-light); letter-spacing: 1px; padding-top: 2px; white-space: nowrap;
+}
+.schedule-content h4 {
+  font-family: var(--serif); font-size: 28px; font-weight: 400;
+  color: var(--text-primary); margin-bottom: 4px; line-height: 1.3;
+}
+.schedule-content p { font-size: 18px; color: var(--text-muted); line-height: 1.7; }
+.schedule-content .speaker-tag {
+  display: inline-block; font-size: 16px; font-weight: 500; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--purple-dim); margin-top: 6px;
+}
+.schedule-break { opacity: 0.5; }
+.schedule-break .schedule-content h4 {
+  font-size: 16px; color: var(--text-muted); font-family: var(--sans); font-weight: 300;
+}
+.schedule-optional {
+  margin-top: 24px; padding: 24px 28px;
+  background: rgba(201, 168, 76, 0.04); border: 1px solid rgba(201, 168, 76, 0.12);
+  border-radius: 8px;
+}
+.schedule-optional h4 {
+  font-family: var(--serif); font-size: 20px; font-weight: 400;
+  color: var(--gold-light); margin-bottom: 4px;
+}
+.schedule-optional p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+/* SPEAKERS */
+.speakers { padding: 64px 0; border-top: none; position: relative; }
+.speakers::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 200px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--purple-dim), transparent);
+}
+.speakers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 36px; }
+.speaker-card {
+  text-align: center; padding: 48px 28px; background: var(--bg-card);
+  border: 1px solid var(--border-subtle); border-radius: 8px;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+.speaker-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 12px 40px rgba(107, 61, 196, 0.1);
+  transform: translateY(-4px);
+}
+.speaker-avatar {
+  width: calc(100% + 56px); height: 320px;
+  margin: -48px -28px 24px -28px;
+  overflow: hidden; border-radius: 8px 8px 0 0;
+}
+.speaker-avatar img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+.speaker-name {
+  font-family: var(--serif); font-size: 31px; font-weight: 400;
+  color: var(--text-primary); margin-bottom: 4px;
+}
+.speaker-role {
+  font-size: 16px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--purple-dim); margin-bottom: 16px;
+}
+.speaker-bio { font-size: 19px; color: var(--text-secondary); line-height: 1.7; }
+
+/* AUDIENCE */
+.audience { padding: 64px 0; border-top: none; position: relative; }
+.audience::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 200px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--purple-dim), transparent);
+}
+.audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 36px; }
+.audience-item {
+  padding: 28px 32px; border-left: 2px solid rgba(107, 61, 196, 0.2);
+  transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0 8px 8px 0;
+}
+.audience-item:hover {
+  border-left-color: var(--purple);
+  background: rgba(107, 61, 196, 0.04);
+  box-shadow: 0 4px 24px rgba(107, 61, 196, 0.06);
+}
+.audience-item h4 {
+  font-family: var(--serif); font-size: 28px; font-weight: 400;
+  color: var(--text-primary); margin-bottom: 8px;
+}
+.audience-item p { font-size: 19px; color: var(--text-secondary); line-height: 1.7; }
+
+/* LOGISTICS */
+.logistics { padding: 64px 0; border-top: none; position: relative; }
+.logistics::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 200px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--purple-dim), transparent);
+}
+.logistics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 36px; }
+.detail-block { margin-bottom: 36px; }
+.detail-label {
+  font-size: 16px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--purple-dim); margin-bottom: 8px;
+}
+.detail-value {
+  font-family: var(--serif); font-size: 31px; font-weight: 400;
+  color: var(--text-primary); line-height: 1.4;
+}
+.detail-note { font-size: 16px; color: var(--text-muted); margin-top: 4px; }
+.logistics-note {
+  background: var(--bg-card); border: 1px solid var(--border-subtle);
+  border-left: 2px solid var(--purple-dim); padding: 28px 32px;
+  font-size: 19px; color: var(--text-secondary); line-height: 1.8;
+  border-radius: 0 8px 8px 0;
+}
+.logistics-note strong { color: var(--text-primary); font-weight: 500; }
+
+/* CTA */
+.cta { padding: 64px 0 80px; text-align: center; position: relative; }
+.cta::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 300px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--purple-dim), transparent);
+}
+.cta::after {
+  content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 500px; height: 400px;
+  background: radial-gradient(ellipse at bottom, rgba(107, 61, 196, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-eye {
+  margin-bottom: 32px; position: relative; display: inline-block;
+}
+.cta-eye::before {
+  content: ''; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px; height: 120px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(107, 61, 196, 0.2) 0%, transparent 70%);
+  animation: ctaGlow 3s ease-in-out infinite alternate;
+}
+@keyframes ctaGlow {
+  0% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.3); }
+}
+.cta-eye img {
+  width: 64px; height: auto; opacity: 0.7; position: relative;
+}
+.cta-tagline {
+  font-family: var(--serif); font-size: clamp(20px, 3vw, 28px); font-weight: 300;
+  font-style: italic; color: var(--text-secondary); margin-bottom: 48px;
+  max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.5;
+}
+.cta-price {
+  font-family: var(--serif); font-size: clamp(48px, 6vw, 72px); font-weight: 300;
+  color: var(--gold-light); margin-bottom: 8px;
+  text-shadow: 0 0 40px rgba(201, 168, 76, 0.3);
+}
+.cta-price-note {
+  font-size: 17px; color: var(--text-muted); margin-bottom: 48px; letter-spacing: 1px;
+}
+/* INLINE CTA */
+.section-cta {
+  text-align: center; margin-top: 48px; padding-top: 16px;
+}
+
+.cta-subtext { margin-top: 24px; font-size: 18px; color: var(--text-muted); line-height: 1.7; position: relative; z-index: 1; }
+
+/* PAGE GUIDE LINE */
+.page-guide {
+  position: relative;
+}
+.page-guide::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      rgba(107, 61, 196, 0.25) 4px,
+      rgba(107, 61, 196, 0.25) 12px,
+      transparent 16px,
+      transparent 32px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+.page-guide::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='200' viewBox='0 0 20 200'%3E%3Cpath d='M10 4l2 4-2 2-2-2z' fill='%236b3dc4' opacity='0.3'/%3E%3C/svg%3E");
+  background-repeat: repeat-y;
+  background-position: center top;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Star sparkle decorations at section breaks */
+.section-star {
+  display: flex; justify-content: center; align-items: center;
+  padding: 24px 0; position: relative; z-index: 1;
+}
+.section-star::before {
+  content: '✦';
+  font-size: 14px; color: var(--purple-dim); opacity: 0.5;
+  text-shadow: 0 0 12px rgba(107, 61, 196, 0.3);
+  animation: starPulse 3s ease-in-out infinite;
+}
+@keyframes starPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+/* FOOTER */
+.footer { padding: 64px 0 48px; border-top: none; text-align: center; position: relative; }
+.footer::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 120px; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(107, 61, 196, 0.3), transparent);
+}
+.footer-logo { margin-bottom: 16px; }
+.footer-logo img { height: 160px; width: auto; opacity: 0.5; }
+.footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+.footer-links a {
+  font-size: 12px; color: var(--text-muted); text-decoration: none;
+  letter-spacing: 1px; transition: color 0.3s ease;
+}
+.footer-links a:hover { color: var(--purple-light); }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+.reveal {
+  opacity: 0; transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-stagger > .reveal:nth-child(1) { transition-delay: 0s; }
+.reveal-stagger > .reveal:nth-child(2) { transition-delay: 0.15s; }
+.reveal-stagger > .reveal:nth-child(3) { transition-delay: 0.3s; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .speakers-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+}
+/* Hamburger button — hidden on desktop */
+.nav-hamburger {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 28px; height: 20px; position: relative; z-index: 101;
+  flex-direction: column; justify-content: space-between; padding: 0;
+}
+.nav-hamburger span {
+  display: block; width: 100%; height: 2px; background: var(--text-secondary);
+  border-radius: 1px; transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .nav-hamburger { display: flex; }
+  .nav { padding: 12px 16px; }
+  .nav.scrolled { padding: 10px 16px; }
+  .nav-logo img { height: 40px; }
+  .nav-links {
+    display: flex; flex-direction: column; gap: 0;
+    position: fixed; top: 0; right: 0; width: 280px; height: 100vh;
+    background: rgba(10, 0, 31, 0.97); backdrop-filter: blur(20px);
+    padding: 80px 32px 32px; z-index: 100;
+    transform: translateX(100%); transition: transform 0.4s ease;
+  }
+  .nav-links li { border-bottom: 1px solid var(--border-subtle); }
+  .nav-links a { display: block; padding: 16px 0; font-size: 14px; letter-spacing: 2px; }
+  .nav.nav-open .nav-links { transform: translateX(0); }
+  .nav.nav-open .nav-hamburger span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+  .nav.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; }
+  .nav.nav-open .nav-hamburger span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
+  /* Hero mobile */
+  .hero { padding: 80px 20px 0; min-height: 100svh; align-items: center; justify-content: center; }
+  .hero-row { flex-direction: column; text-align: center; gap: 0; align-items: center; width: 100%; }
+  .hero-text { text-align: center; padding-bottom: 10px; width: 100%; display: flex; flex-direction: column; align-items: center; }
+  .hero-title { font-size: clamp(52px, 14vw, 72px); }
+  .hero-subtitle { margin-bottom: 10px; font-size: 16px; }
+  .hero-meta { justify-content: center; flex-direction: column; gap: 3px; font-size: 15px; padding: 10px 18px; text-align: center; width: auto; }
+  .hero-meta .dot { display: none; }
+  .hero-location { font-size: 13px; margin-top: 2px; }
+  .hero-photo-wrapper {
+    width: 65vw; max-width: 260px;
+    margin-right: 0; margin-bottom: 0;
+  }
+  .hero-photo { margin-top: -25%; transform: scale(1.1); }
+  .hero-bottom { padding-bottom: 12px; margin-top: 8px; }
+  .hero-cta { margin-top: 0; }
+  .scroll-indicator { display: none; }
+
+  /* Content sections mobile */
+  .container { padding: 0 20px; }
+  .intro { padding: 40px 0 48px; }
+  .intro-grid, .logistics-grid, .audience-grid { grid-template-columns: 1fr; gap: 32px; }
+  .intro-grid { gap: 32px; }
+  .intro-text { font-size: 17px; }
+  .intro-quote { font-size: 22px; padding-left: 20px; }
+
+  .program, .speakers, .audience, .logistics { padding: 48px 0; }
+  .section-title { font-size: clamp(28px, 8vw, 40px); }
+  .day-block { padding: 24px 20px; }
+  .day-header { gap: 12px; }
+  .day-number { font-size: 46px; }
+  .day-title { font-size: 24px; }
+  .schedule-item { grid-template-columns: 1fr; gap: 4px; margin: 0 -8px; padding: 16px 8px; }
+  .schedule-time { font-size: 15px; }
+
+  /* Speaker cards mobile */
+  .speakers-grid { grid-template-columns: 1fr; max-width: 100%; gap: 24px; }
+  .speaker-card { padding: 0 20px 32px; }
+  .speaker-avatar { height: 280px; width: calc(100% + 40px); margin: 0 -20px 20px -20px; }
+  .speaker-card:hover { transform: none; }
+
+  /* Audience mobile */
+  .audience-grid { gap: 16px; }
+  .audience-item { padding: 20px 24px; }
+  .audience-item h4 { font-size: 20px; }
+  .audience-item p { font-size: 15px; }
+
+  /* Speaker mobile text */
+  .speaker-name { font-size: 24px; }
+  .speaker-bio { font-size: 15px; }
+  .speaker-role { font-size: 12px; }
+
+  /* CTA mobile */
+  .cta { padding: 48px 0 64px; }
+  .cta-price { font-size: clamp(44px, 12vw, 60px); }
+  .cta-tagline { font-size: clamp(20px, 5.5vw, 24px); margin-bottom: 28px; }
+
+  /* Buttons mobile */
+  .btn-primary, .btn-outline { padding: 22px 52px; font-size: 15px; letter-spacing: 3px; }
+
+  /* Footer mobile */
+  .footer-logo img { height: 100px; }
+  .footer-links { flex-direction: column; gap: 12px; }
+
+  /* Page guide - hide on mobile */
+  .page-guide::before, .page-guide::after { display: none; }
+  .section-star { padding: 16px 0; }
+
+  /* Reduce reveal animation distance on mobile */
+  .reveal { transform: translateY(20px); }
+
+  /* Fix lang toggle position on mobile */
+  .lang-toggle { margin-left: auto; margin-right: 16px; }
+}
+
+  /* Performance: reduce animations on low-end mobile */
+  .hero::before { animation: none; opacity: 0.8; }
+  .section-star::before { animation: none; opacity: 0.5; }
+  .cta-eye::before { animation: none; opacity: 0.7; }
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* GPU compositing hints for smooth scrolling */
+.hero, .nav, .day-block, .speaker-card { contain: layout style; }
+
+/* Small phones */
+@media (max-width: 400px) {
+  .hero-title { font-size: 32px; }
+  .hero-subtitle { font-size: 15px; }
+  .btn-primary, .btn-outline { padding: 14px 32px; font-size: 10px; letter-spacing: 2px; }
+  .speaker-avatar { height: 240px; }
+  .day-number { font-size: 36px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">
+    <img src="images/coder-logo.svg" alt="CODER">
+  </a>
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('bg')">BG</button>
+    <button onclick="setLang('es')">ES</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+  <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('nav-open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="#about" onclick="document.querySelector('.nav').classList.remove('nav-open')"><span data-lang="bg">За събитието</span><span data-lang="en">About</span><span data-lang="es">Evento</span></a></li>
+    <li><a href="#program" onclick="document.querySelector('.nav').classList.remove('nav-open')"><span data-lang="bg">Програма</span><span data-lang="en">Program</span><span data-lang="es">Programa</span></a></li>
+    <li><a href="#speakers" onclick="document.querySelector('.nav').classList.remove('nav-open')"><span data-lang="bg">Лектори</span><span data-lang="en">Speakers</span><span data-lang="es">Ponentes</span></a></li>
+    <li><a href="#details" onclick="document.querySelector('.nav').classList.remove('nav-open')"><span data-lang="bg">Детайли</span><span data-lang="en">Details</span><span data-lang="es">Detalles</span></a></li>
+    <li><a href="#register" onclick="document.querySelector('.nav').classList.remove('nav-open')"><span data-lang="bg">Билети</span><span data-lang="en">Tickets</span><span data-lang="es">Entradas</span></a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-row">
+    <div class="hero-text">
+      <h1 class="hero-title" data-lang="bg">Квантовият път<br>на <em>душата</em></h1>
+      <h1 class="hero-title" data-lang="en">The Quantum Path<br>of the <em>Soul</em></h1>
+      <h1 class="hero-title" data-lang="es">El camino cu&aacute;ntico<br>del <em>alma</em></h1>
+      <p class="hero-subtitle" data-lang="bg">The Quantum Path of the Soul ·Valencia</p>
+      <p class="hero-subtitle" data-lang="en">The Quantum Path of the Soul ·Valencia</p>
+      <p class="hero-subtitle" data-lang="es">El camino cu&aacute;ntico del alma ·Valencia</p>
+      <div class="hero-meta">
+        <span data-lang="bg">31 май 2026</span>
+        <span data-lang="en">31 May 2026</span>
+        <span data-lang="es">31 de mayo 2026</span>
+        <span class="dot"></span>
+        <span>Hotel Ilunion Valencia 4</span>
+        <span class="dot"></span>
+        <span>&euro;200</span>
+        <div class="hero-location">Valencia, Spain</div>
+      </div>
+    </div>
+    <div class="hero-photo-wrapper">
+      <img src="images/iskra-olga-opt.png" alt="Искра Кацарска и Олга Лойд" class="hero-photo">
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <div class="hero-cta">
+      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+    </div>
+  </div>
+</section>
+
+<div class="page-guide">
+<div class="section-star"></div>
+
+<!-- INTRO -->
+<section class="intro" id="about">
+  <div class="container">
+    <div class="intro-grid reveal">
+      <div>
+        <div class="section-label" data-lang="bg">За събитието</div>
+        <div class="section-label" data-lang="en">About the Event</div>
+        <div class="section-label" data-lang="es">Sobre el evento</div>
+        <div class="intro-text" data-lang="bg">
+          <p>Има път, който не се вижда с очи. Той се усеща.</p>
+          <p>Един ден в сърцето на Валенсия, посветен на дълбоко осъзнаване и практическа работа с енергията, сетивата и дарбите, които усещате, но все още не сте се научили да управлявате.</p>
+          <p>Олга Лойд, Искра Кацарска и Никита Георгиев ви канят на интензивен семинар, в който теорията среща практиката, индивидуалното намерение среща груповата енергия, а бизнес стратегията среща духовната мисия.</p>
+        </div>
+        <div class="intro-text" data-lang="en">
+          <p>One day in the heart of Valencia dedicated to deep awareness and hands-on work with the energy, senses, and gifts you feel but haven't yet learned to direct.</p>
+          <p>A full-day seminar combining consciousness lectures, energetic practice, and a practical business masterclass on building a sustainable practice in the esoterics space. Three speakers, three distinct lenses, one shared field.</p>
+        </div>
+        <div class="intro-text" data-lang="es">
+          <p>Hay un camino que no se ve con los ojos. Se siente.</p>
+          <p>Un d&iacute;a en el coraz&oacute;n de Valencia dedicado a la conciencia profunda y al trabajo pr&aacute;ctico con la energ&iacute;a, los sentidos y los dones que sientes pero que a&uacute;n no has aprendido a dirigir.</p>
+          <p>Olga Loyd, Iskra Katsarska y Nikita Georgiev te invitan a un seminario intensivo donde la teor&iacute;a se encuentra con la pr&aacute;ctica, la intenci&oacute;n individual se encuentra con la energ&iacute;a grupal, y la estrategia empresarial se encuentra con la misi&oacute;n espiritual.</p>
+        </div>
+      </div>
+      <div class="intro-quote" data-lang="bg">
+        &ldquo;Проблемът не е, че нещо не е наред с теб. Проблемът е, че носиш повече чувствителност, отколкото си се научил да управляваш. Това са неактивирани дарби.&rdquo;
+      </div>
+      <div class="intro-quote" data-lang="en">
+        &ldquo;The problem is not that something is wrong with you. The problem is that you carry more sensitivity than you have learned to manage. These are unactivated gifts.&rdquo;
+      </div>
+      <div class="intro-quote" data-lang="es">
+        &ldquo;El problema no es que algo est&eacute; mal contigo. El problema es que llevas m&aacute;s sensibilidad de la que has aprendido a gestionar. Son dones sin activar.&rdquo;
+      </div>
+    </div>
+    <div class="section-cta reveal">
+      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="section-star"></div>
+
+<!-- PROGRAM -->
+<section class="program" id="program">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" data-lang="bg">Програма</div>
+      <div class="section-label" data-lang="en">Program</div>
+      <div class="section-label" data-lang="es">Programa</div>
+      <h2 class="section-title" data-lang="bg">Един ден, една<br>трансформация</h2>
+      <h2 class="section-title" data-lang="en">One Day, One<br>Transformation</h2>
+      <h2 class="section-title" data-lang="es">Un d&iacute;a, una<br>transformaci&oacute;n</h2>
+    </div>
+
+    <div class="days-wrapper">
+      <div class="day-block reveal">
+        <div class="day-header">
+          <div class="day-title-group">
+            <div class="day-date" data-lang="bg">Неделя &middot; 31 май</div>
+            <div class="day-date" data-lang="en">Sunday &middot; 31 May</div>
+            <div class="day-date" data-lang="es">Domingo &middot; 31 de mayo</div>
+            <div class="day-title" data-lang="bg">Семинар</div>
+            <div class="day-title" data-lang="en">Seminar</div>
+            <div class="day-title" data-lang="es">Seminario</div>
+            <div class="day-subtitle">10:00 &ndash; 17:00</div>
+          </div>
+        </div>
+
+        <div class="schedule">
+          <div class="schedule-item">
+            <div class="schedule-time">10:00 &ndash; 10:30</div>
+            <div class="schedule-content">
+              <h4 data-lang="bg">Откриващ кръг и групова настройка</h4>
+              <h4 data-lang="en">Opening Circle &amp; Group Attunement</h4>
+              <h4 data-lang="es">C&iacute;rculo de apertura y sintonizaci&oacute;n grupal</h4>
+              <p data-lang="bg">Задаване на намерения, свързване с груповото поле и калибриране за деня.</p>
+              <p data-lang="en">Setting intentions, connecting with the group field, and calibrating for the day ahead.</p>
+              <p data-lang="es">Establecer intenciones, conectar con el campo grupal y calibrarse para el d&iacute;a.</p>
+            </div>
+          </div>
+
+          <div class="schedule-item">
+            <div class="schedule-time">10:30 &ndash; 12:00</div>
+            <div class="schedule-content">
+              <h4 data-lang="bg">Лекция</h4>
+              <h4 data-lang="en">Lecture</h4>
+              <h4 data-lang="es">Conferencia</h4>
+              <p data-lang="bg">Дълбоко потапяне в съзнанието, енергийните полета и методологията КОДЕР. Изследване на невидимата архитектура, която оформя нашата реалност.</p>
+              <p data-lang="en">Deep-dive into consciousness, energy fields, and the CODER methodology. Exploring the invisible architecture that shapes our reality.</p>
+              <p data-lang="es">Inmersi&oacute;n profunda en la conciencia, los campos energ&eacute;ticos y la metodolog&iacute;a CODER. Explorando la arquitectura invisible que da forma a nuestra realidad.</p>
+              <span class="speaker-tag" data-lang="bg">Олга Лойд</span>
+              <span class="speaker-tag" data-lang="en">Olga Loyd</span>
+              <span class="speaker-tag" data-lang="es">Olga Loyd</span>
+            </div>
+          </div>
+
+          <div class="schedule-item schedule-break">
+            <div class="schedule-time">12:00 &ndash; 12:15</div>
+            <div class="schedule-content">
+              <h4 data-lang="bg">Кафе пауза</h4>
+              <h4 data-lang="en">Coffee Break</h4>
+              <h4 data-lang="es">Pausa caf&eacute;</h4>
+            </div>
+          </div>
+
+          <div class="schedule-item">
+            <div class="schedule-time">12:15 &ndash; 13:30</div>
+            <div class="schedule-content">
+              <h4 data-lang="bg">Съвместна лекция</h4>
+              <h4 data-lang="en">Joint Session</h4>
+              <h4 data-lang="es">Sesi&oacute;n conjunta</h4>
+              <p data-lang="bg">Комбинирана сесия, свързваща енергийната диагностика с практическото приложение. Две перспективи, едно обединено поле.</p>
+              <p data-lang="en">A combined session bridging energetic diagnostics with practical application. Two perspectives, one unified field.</p>
+              <p data-lang="es">Una sesi&oacute;n combinada que conecta el diagn&oacute;stico energ&eacute;tico con la aplicaci&oacute;n pr&aacute;ctica. Dos perspectivas, un campo unificado.</p>
+              <span class="speaker-tag" data-lang="bg">Олга Лойд &amp; Искра Кацарска</span>
+              <span class="speaker-tag" data-lang="en">Olga Loyd &amp; Iskra Katsarska</span>
+              <span class="speaker-tag" data-lang="es">Olga Loyd &amp; Iskra Katsarska</span>
+            </div>
+          </div>
+
+          <div class="schedule-item schedule-break">
+            <div class="schedule-time">13:30 &ndash; 15:00</div>
+            <div class="schedule-content">
+              <h4 data-lang="bg">Обяд &middot; включен в билета</h4>
+              <h4 data-lang="en">Lunch &middot; included in ticket</h4>
+              <h4 data-lang="es">Almuerzo &middot; incluido en la entrada</h4>
+            </div>
+          </div>
+
+          <div class="schedule-item">
+            <div class="schedule-time">15:00 &ndash; 17:00</div>
+            <div class="schedule-content">
+              <h4 data-lang="bg">Бизнесът на интуицията</h4>
+              <h4 data-lang="en">The Business of Intuition</h4>
+              <h4 data-lang="es">El negocio de la intuici&oacute;n</h4>
+              <p data-lang="bg">Практически майсторски клас за изграждане, управление и мащабиране на бизнес в езотеричното пространство. Позициониране на бранда, привличане на клиенти, финансова архитектура и дигитална инфраструктура. От първия клиент до устойчива практика.</p>
+              <p data-lang="en">A practical masterclass on building, managing, and scaling a business in the esoterics space. Brand positioning, client acquisition, financial architecture, and digital infrastructure. From first client to sustainable practice. No fluff, all strategy.</p>
+              <p data-lang="es">Un masterclass pr&aacute;ctico sobre c&oacute;mo construir, gestionar y escalar un negocio en el espacio esot&eacute;rico. Posicionamiento de marca, captaci&oacute;n de clientes, arquitectura financiera e infraestructura digital. Del primer cliente a una pr&aacute;ctica sostenible.</p>
+              <span class="speaker-tag" data-lang="bg">Никита Георгиев MBA</span>
+              <span class="speaker-tag" data-lang="en">Nikita Georgiev MBA</span>
+              <span class="speaker-tag" data-lang="es">Nikita Georgiev MBA</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="schedule-optional">
+          <h4>20:00 ·La Noche Dorada</h4>
+          <p data-lang="bg">Незадължително вечерно събиране. Вечеря, напитки и разговори под небето на Валенсия. Защото трансформацията не спира, когато лекциите свършат. <span style="color:var(--text-muted);">(Не е включено в цената на билета)</span></p>
+          <p data-lang="en">Optional evening gathering. Dinner, drinks, and conversation under the Valencia sky. Because transformation doesn't end when the lectures do. <span style="color:var(--text-muted);">(Not included in ticket price)</span></p>
+          <p data-lang="es">Encuentro nocturno opcional. Cena, bebidas y conversaci&oacute;n bajo el cielo de Valencia. Porque la transformaci&oacute;n no termina cuando acaban las conferencias. <span style="color:var(--text-muted);">(No incluido en el precio de la entrada)</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-cta reveal">
+      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="section-star"></div>
+
+<!-- SPEAKERS -->
+<section class="speakers" id="speakers">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" data-lang="bg">Лектори</div>
+      <div class="section-label" data-lang="en">Speakers</div>
+      <div class="section-label" data-lang="es">Ponentes</div>
+      <h2 class="section-title" data-lang="bg">Вашите лектори</h2>
+      <h2 class="section-title" data-lang="en">Your Lecturers</h2>
+      <h2 class="section-title" data-lang="es">Los ponentes</h2>
+    </div>
+
+    <div class="speakers-grid reveal-stagger">
+      <div class="speaker-card reveal">
+        <div class="speaker-avatar"><img src="images/Olga_Headshot.jpg" loading="lazy" alt="Олга Лойд"></div>
+        <div class="speaker-name" data-lang="bg">Олга Лойд</div>
+        <div class="speaker-name" data-lang="en">Olga Loyd</div>
+        <div class="speaker-role" data-lang="bg">Основател и създател на метода КОДЕР</div>
+        <div class="speaker-role" data-lang="en">Founder &amp; Creator of the CODER Method</div>
+        <div class="speaker-role" data-lang="es">Fundadora y creadora del m&eacute;todo CODER</div>
+        <div class="speaker-bio" data-lang="bg">Олга Лойд е основател на Академия КОДЕР и създател на видео-диагностичната вълнова система КОДЕР ·метод за разчитане на индивидуалните способности и енергийно-информационното поле на човека чрез компютърна обработка на специализирана снимка. Повече от 30 години изследва съзнанието, енергийните полета и връзката между човека и Земята. Юрист по образование (кандидат на юридическите науки, UNESCO ISCED ниво 8), тя съчетава аналитична прецизност с дълбока духовна практика. Изследовател на древни места на сила в България, Испания, Египет, Гърция, Индия, Русия и други страни. Лектор в Международната академия по иновации.</div>
+        <div class="speaker-bio" data-lang="en">Olga Loyd is the founder of CODER Academy and creator of the CODER video-diagnostic wave system ·a method for reading individual capabilities and the energy-information field through computerized analysis of specialized photography. For over 30 years she has researched consciousness, energy fields, and the connection between humans and the Earth. A jurist by training (Candidate of Juridical Sciences, UNESCO ISCED level 8), she combines analytical precision with deep spiritual practice. Researcher of ancient places of power across Bulgaria, Spain, Egypt, Greece, India, Russia, and beyond.</div>
+        <div class="speaker-bio" data-lang="es">Olga Loyd es la fundadora de la Academia CODER y creadora del sistema de video-diagn&oacute;stico ondulatorio CODER ·un m&eacute;todo para leer las capacidades individuales y el campo de informaci&oacute;n energ&eacute;tica mediante an&aacute;lisis informatizado de fotograf&iacute;a especializada. Durante m&aacute;s de 30 a&ntilde;os ha investigado la conciencia, los campos energ&eacute;ticos y la conexi&oacute;n entre los seres humanos y la Tierra. Jurista de formaci&oacute;n (Candidata en Ciencias Jur&iacute;dicas, UNESCO ISCED nivel 8), combina la precisi&oacute;n anal&iacute;tica con una profunda pr&aacute;ctica espiritual.</div>
+      </div>
+
+      <div class="speaker-card reveal">
+        <div class="speaker-avatar"><img src="images/Iskra_Headshot.jpg" loading="lazy" alt="Искра Кацарска"></div>
+        <div class="speaker-name" data-lang="bg">Искра Кацарска</div>
+        <div class="speaker-name" data-lang="en">Iskra Katsarska</div>
+        <div class="speaker-role" data-lang="bg">Сертифициран практик КОДЕР</div>
+        <div class="speaker-role" data-lang="en">Certified CODER Practitioner</div>
+        <div class="speaker-role" data-lang="es">Practicante certificada CODER</div>
+        <div class="speaker-bio" data-lang="bg">Искра Кацарска е бизнесдама с над 20 години опит в корпоративния свят, преплетен с дълбоко вътрешно търсене. Лицензиран практик по Рейки, Дзен, Санергия, Хипноза, Арт терапия и Квантов шаманизъм. Сертифициран практик на метода КОДЕР. Създател на авторския метод &bdquo;Избери своя път&ldquo;, който обединява бизнес логиката с енергийната работа. Сътрудник по иновативни научни проекти. Неуморен търсач на истината, който свързва практичното с невидимото.</div>
+        <div class="speaker-bio" data-lang="en">Iskra Katsarska brings over 20 years of corporate experience interwoven with a deep inner search. A licensed practitioner of Reiki, Zen, Synergy, Hypnosis, Art Therapy, and Quantum Shamanism. Certified practitioner of the CODER method. Creator of the original method &ldquo;Choose Your Path,&rdquo; bridging business logic with energetic practice. Collaborator on innovative scientific research projects. A relentless seeker of truth who connects the practical with the unseen.</div>
+        <div class="speaker-bio" data-lang="es">Iskra Katsarska aporta m&aacute;s de 20 a&ntilde;os de experiencia corporativa entrelazada con una profunda b&uacute;squeda interior. Practicante licenciada de Reiki, Zen, Sinergia, Hipnosis, Arteterapia y Chamanismo Cu&aacute;ntico. Practicante certificada del m&eacute;todo CODER. Creadora del m&eacute;todo original &ldquo;Elige tu camino&rdquo;, que une la l&oacute;gica empresarial con la pr&aacute;ctica energ&eacute;tica. Colaboradora en proyectos de investigaci&oacute;n cient&iacute;fica innovadores. Una buscadora incansable de la verdad.</div>
+      </div>
+
+      <div class="speaker-card reveal">
+        <div class="speaker-avatar"><img src="images/Nikita_Headshot.jpg" loading="lazy" alt="Никита Георгиев"></div>
+        <div class="speaker-name" data-lang="bg">Никита Георгиев</div>
+        <div class="speaker-name" data-lang="en">Nikita Georgiev</div>
+        <div class="speaker-role" data-lang="bg">Съосновател, CEO &amp; CTO на КОДЕР</div>
+        <div class="speaker-role" data-lang="en">Co-founder, CEO &amp; CTO of CODER</div>
+        <div class="speaker-role" data-lang="es">Cofundador, CEO &amp; CTO de CODER</div>
+        <div class="speaker-bio" data-lang="bg">Никита Георгиев е съосновател на КОДЕР и архитектът зад цялата технологична и бизнес инфраструктура на академията. MBA от Университета в Кардиф. Изгражда дигиталните системи, които позволяват на духовните практики да достигат до хората, без да губят автентичността си ·от платформата за обучение и CRM системите до финансовата архитектура и стратегическото развитие на бранда. Вярва, че най-добрата технология е тази, която е невидима ·работи безупречно, за да може посланието да остане на преден план.</div>
+        <div class="speaker-bio" data-lang="en">Nikita Georgiev is the co-founder of CODER and the architect behind the academy's entire technology and business infrastructure. MBA from Cardiff University. He builds the digital systems that allow spiritual practices to reach people without losing their authenticity ·from the learning platform and CRM systems to financial architecture and strategic brand development. He believes the best technology is invisible ·it works flawlessly so the message can stay in the spotlight.</div>
+        <div class="speaker-bio" data-lang="es">Nikita Georgiev es cofundador de CODER y el arquitecto detr&aacute;s de toda la infraestructura tecnol&oacute;gica y empresarial de la academia. MBA por la Universidad de Cardiff. Construye los sistemas digitales que permiten que las pr&aacute;cticas espirituales lleguen a las personas sin perder su autenticidad ·desde la plataforma de aprendizaje y los sistemas CRM hasta la arquitectura financiera y el desarrollo estrat&eacute;gico de marca. Cree que la mejor tecnolog&iacute;a es invisible ·funciona impecablemente para que el mensaje permanezca en primer plano.</div>
+      </div>
+    </div>
+
+    <div class="section-cta reveal">
+      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="section-star"></div>
+
+<!-- AUDIENCE -->
+<section class="audience">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" data-lang="bg">За кого е това</div>
+      <div class="section-label" data-lang="en">Who is this for</div>
+      <div class="section-label" data-lang="es">Para qui&eacute;n es esto</div>
+      <h2 class="section-title" data-lang="bg">Това събитие е за вас, ако&hellip;</h2>
+      <h2 class="section-title" data-lang="en">This Event is for You If&hellip;</h2>
+      <h2 class="section-title" data-lang="es">Este evento es para ti si&hellip;</h2>
+    </div>
+
+    <div class="audience-grid reveal-stagger">
+      <div class="audience-item reveal">
+        <h4 data-lang="bg">Усещате повече, отколкото можете да обясните</h4>
+        <h4 data-lang="en">You sense more than you can explain</h4>
+        <h4 data-lang="es">Sientes m&aacute;s de lo que puedes explicar</h4>
+        <p data-lang="bg">Усещате енергията на хората и местата по-интензивно от другите. Имате моменти на интуитивно знание, което не можете да рационализирате. Това не са странности. Това са неактивирани дарби.</p>
+        <p data-lang="en">You sense the energy of people and places more intensely than others. You have moments of intuitive knowing you can't rationalize. These aren't quirks. They're unactivated gifts.</p>
+        <p data-lang="es">Sientes la energ&iacute;a de las personas y los lugares con m&aacute;s intensidad que los dem&aacute;s. Tienes momentos de conocimiento intuitivo que no puedes racionalizar. No son rarezas. Son dones sin activar.</p>
+      </div>
+      <div class="audience-item reveal">
+        <h4 data-lang="bg">Готови сте за структура, не само за теория</h4>
+        <h4 data-lang="en">You're ready for structure, not just theory</h4>
+        <h4 data-lang="es">Est&aacute;s listo para estructura, no solo teor&iacute;a</h4>
+        <p data-lang="bg">Четохте книгите и гледахте видеоклиповете. Сега искате истинска практика, реална обратна връзка и рамка, която превръща осъзнатостта в ежедневна способност.</p>
+        <p data-lang="en">You've read the books and watched the videos. Now you want real practice, real feedback, and a framework that turns awareness into daily capability.</p>
+        <p data-lang="es">Has le&iacute;do los libros y visto los v&iacute;deos. Ahora quieres pr&aacute;ctica real, retroalimentaci&oacute;n real y un marco que convierta la conciencia en capacidad diaria.</p>
+      </div>
+      <div class="audience-item reveal">
+        <h4 data-lang="bg">Искате да превърнете мисията в бизнес</h4>
+        <h4 data-lang="en">You want to turn your mission into a business</h4>
+        <h4 data-lang="es">Quieres convertir tu misi&oacute;n en un negocio</h4>
+        <p data-lang="bg">Имате дарба и призвание, но нямате пътна карта как да ги направите устойчиви. Бизнес майсторският клас свързва духовната практика с професионалната реалност.</p>
+        <p data-lang="en">You have a gift and a calling but no roadmap to make it sustainable. The business masterclass bridges spiritual practice and professional reality.</p>
+        <p data-lang="es">Tienes un don y una vocaci&oacute;n pero no tienes una hoja de ruta para hacerlo sostenible. El masterclass de negocios conecta la pr&aacute;ctica espiritual con la realidad profesional.</p>
+      </div>
+      <div class="audience-item reveal">
+        <h4 data-lang="bg">Търсите общност, не публика</h4>
+        <h4 data-lang="en">You're looking for community, not an audience</h4>
+        <h4 data-lang="es">Buscas comunidad, no p&uacute;blico</h4>
+        <p data-lang="bg">Искате да сте в стая, където не трябва да се обяснявате. Където резонансът е по подразбиране, а не изключение.</p>
+        <p data-lang="en">You want to be in a room where you don't have to explain yourself. Where resonance is the default, not the exception.</p>
+        <p data-lang="es">Quieres estar en una sala donde no tengas que explicarte. Donde la resonancia sea lo normal, no la excepci&oacute;n.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-star"></div>
+
+<!-- LOGISTICS -->
+<section class="logistics" id="details">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" data-lang="bg">Детайли</div>
+      <div class="section-label" data-lang="en">Details</div>
+      <div class="section-label" data-lang="es">Detalles</div>
+      <h2 class="section-title" data-lang="bg">Практическа информация</h2>
+      <h2 class="section-title" data-lang="en">Practical Information</h2>
+      <h2 class="section-title" data-lang="es">Informaci&oacute;n pr&aacute;ctica</h2>
+    </div>
+
+    <div class="logistics-grid reveal">
+      <div>
+        <div class="detail-block">
+          <div class="detail-label" data-lang="bg">Дати</div>
+          <div class="detail-label" data-lang="en">Dates</div>
+          <div class="detail-label" data-lang="es">Fechas</div>
+          <div class="detail-value" data-lang="bg">31 май 2026</div>
+          <div class="detail-value" data-lang="en">31 May 2026</div>
+          <div class="detail-value" data-lang="es">31 de mayo 2026</div>
+          <div class="detail-note" data-lang="bg">Неделя</div>
+          <div class="detail-note" data-lang="en">Sunday</div>
+          <div class="detail-note" data-lang="es">Domingo</div>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label" data-lang="bg">Локация</div>
+          <div class="detail-label" data-lang="en">Venue</div>
+          <div class="detail-label" data-lang="es">Lugar</div>
+          <a href="https://maps.google.com/?q=Hotel+Ilunion+Valencia+4,+C/+Valle+de+Ayora+1,+46015+Valencia,+Spain" target="_blank" style="text-decoration:none;">
+            <div class="detail-value" style="transition:color 0.3s;">Hotel Ilunion Valencia 4 &#8599;</div>
+            <div class="detail-note">C/ Valle de Ayora 1, 46015 Valencia, Spain</div>
+          </a>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label" data-lang="bg">Цена</div>
+          <div class="detail-label" data-lang="en">Price</div>
+          <div class="detail-label" data-lang="es">Precio</div>
+          <div class="detail-value">&euro;200</div>
+          <div class="detail-note" data-lang="bg">391.17 лв &middot; ДДС включен &middot; Обяд включен</div>
+          <div class="detail-note" data-lang="en">391.17 лв &middot; VAT included &middot; Lunch included</div>
+          <div class="detail-note" data-lang="es">IVA incluido &middot; Almuerzo del domingo incluido</div>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label" data-lang="bg">Език</div>
+          <div class="detail-label" data-lang="en">Language</div>
+          <div class="detail-label" data-lang="es">Idioma</div>
+          <div class="detail-value" data-lang="bg">Български / English / Espa&ntilde;ol</div>
+          <div class="detail-value" data-lang="en">Bulgarian / English / Spanish</div>
+          <div class="detail-value" data-lang="es">B&uacute;lgaro / Ingl&eacute;s / Espa&ntilde;ol</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="logistics-note" data-lang="bg">
+          <strong>Какво е включено:</strong><br><br>
+          Пълен достъп до семинара на 31 май, обяд, материали и ресурси за участниците.
+          <br><br>
+          <span style="color:var(--text-muted);font-size:12px;">Настаняване, пътуване и незадължителната вечеря не са включени. Препоръчваме настаняване в центъра на Валенсия за лесен достъп до залата.</span>
+        </div>
+        <div class="logistics-note" data-lang="en">
+          <strong>What's included:</strong><br><br>
+          Full seminar access on May 31, lunch, and participant materials.
+          <br><br>
+          <span style="color:var(--text-muted);font-size:12px;">Accommodation, travel, and the optional evening dinner are not included. We recommend booking accommodation in Valencia's city center for easy access to the venue.</span>
+        </div>
+        <div class="logistics-note" data-lang="es">
+          <strong>Qu&eacute; incluye:</strong><br><br>
+          Acceso completo al seminario del 31 de mayo, almuerzo y materiales para los participantes.
+          <br><br>
+          <span style="color:var(--text-muted);font-size:12px;">El alojamiento, el viaje y la cena opcional de la noche no est&aacute;n incluidos. Recomendamos reservar alojamiento en el centro de Valencia para facilitar el acceso al lugar.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-star"></div>
+
+</div><!-- end .page-guide -->
+
+<!-- CTA -->
+<section class="cta" id="register">
+  <div class="container reveal">
+    <div class="section-label" data-lang="bg">Регистрация</div>
+    <div class="section-label" data-lang="en">Register</div>
+    <div class="section-label" data-lang="es">Registro</div>
+    <div class="cta-eye">
+      <img src="images/eye-icon.png" loading="lazy" alt="">
+    </div>
+    <div class="cta-tagline" data-lang="bg">&ldquo;Тук спираме да търсим отговорите навън.<br>Тук ставаме отговора.&rdquo;</div>
+    <div class="cta-tagline" data-lang="en">&ldquo;Here we stop looking for answers outside.<br>Here we become the answer.&rdquo;</div>
+    <div class="cta-tagline" data-lang="es">&ldquo;Aqu&iacute; dejamos de buscar respuestas afuera.<br>Aqu&iacute; nos convertimos en la respuesta.&rdquo;</div>
+    <div class="cta-price">&euro;200</div>
+    <div class="cta-price-note" data-lang="bg">31 май 2026 &middot; Hotel Ilunion Valencia 4 &middot; Обяд включен</div>
+    <div class="cta-price-note" data-lang="en">31 May 2026 &middot; Hotel Ilunion Valencia 4 &middot; Lunch included</div>
+    <div class="cta-price-note" data-lang="es">31 de mayo 2026 &middot; Hotel Ilunion Valencia 4 &middot; Almuerzo incluido</div>
+
+    <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary" id="stripe-btn">
+      <span data-lang="bg">Запазете място</span>
+      <span data-lang="en">Book Now</span>
+      <span data-lang="es">Reserva tu plaza</span>
+    </a>
+
+    <div class="cta-subtext" data-lang="bg">
+      Ще получите потвърждение на имейла си след успешно плащане.<br><br>
+      <span style="font-size:11px;">Сумите за закупени билети не се възстановяват, освен при официална отмяна на събитието. Цената включва ДДС.</span>
+    </div>
+    <div class="cta-subtext" data-lang="en">
+      You will receive a confirmation email after successful payment.<br><br>
+      <span style="font-size:11px;">Tickets are non-refundable unless the event is officially cancelled. Price includes VAT.</span>
+    </div>
+    <div class="cta-subtext" data-lang="es">
+      Recibir&aacute;s un correo de confirmaci&oacute;n tras el pago.<br><br>
+      <span style="font-size:11px;">Las entradas no son reembolsables salvo cancelaci&oacute;n oficial del evento. El precio incluye IVA.</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">
+      <img src="images/coder-logo.svg" alt="CODER">
+    </div>
+    <div class="footer-links">
+      <a href="https://coderonline.org" target="_blank">CODER Website</a>
+      <a href="https://learn.coderonline.org" target="_blank">CODER Academy</a>
+      <a href="https://www.facebook.com/olga.loyd/" target="_blank">Facebook</a>
+      <a href="https://www.youtube.com/@OlgaCoder" target="_blank">YouTube</a>
+    </div>
+    <div style="margin-top:16px;font-size:11px;color:var(--text-muted);">
+      &copy; 2026 КОДЕР ЕООД &middot; All rights reserved
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.documentElement.classList.remove('lang-en', 'lang-es');
+  if (lang !== 'bg') document.documentElement.classList.add('lang-' + lang);
+  document.querySelectorAll('.lang-toggle button').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+  });
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+</script>
+
+</body>
+</html>
