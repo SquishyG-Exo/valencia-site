@@ -255,11 +255,17 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 }
 .hero-title em { font-style: italic; color: var(--purple-light); }
 
-.hero-subtitle {
-  font-family: var(--sans); font-size: 14px; font-weight: 500;
-  letter-spacing: 3px; text-transform: uppercase; color: var(--purple-light);
-  margin-bottom: 20px;
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 9px;
+  margin-bottom: 24px; padding: 12px 26px;
+  background: rgba(201, 168, 76, 0.13);
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  border-radius: 999px; color: var(--gold-light);
+  font-family: var(--sans); font-size: 15px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.1);
 }
+.hero-badge svg { width: 17px; height: 17px; flex: 0 0 auto; }
 
 .hero-meta {
   display: flex; gap: 20px; align-items: center; justify-content: center;
@@ -788,7 +794,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
   .hero-row { flex-direction: column; text-align: center; gap: 0; align-items: center; width: 100%; }
   .hero-text { text-align: center; padding-bottom: 10px; width: 100%; display: flex; flex-direction: column; align-items: center; }
   .hero-title { font-size: clamp(52px, 14vw, 72px); }
-  .hero-subtitle { margin-bottom: 10px; font-size: 16px; }
+  .hero-badge { margin-bottom: 16px; padding: 10px 20px; font-size: 13px; }
   .hero-meta { justify-content: center; flex-direction: column; gap: 3px; font-size: 15px; padding: 10px 18px; text-align: center; width: auto; }
   .hero-meta .dot { display: none; }
   .hero-location { font-size: 13px; margin-top: 2px; }
@@ -887,7 +893,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 /* Small phones */
 @media (max-width: 400px) {
   .hero-title { font-size: 32px; }
-  .hero-subtitle { font-size: 15px; }
+  .hero-badge { font-size: 12px; padding: 9px 16px; letter-spacing: 1px; }
   .btn-primary, .btn-outline { padding: 14px 32px; font-size: 10px; letter-spacing: 2px; }
   .speaker-avatar { height: 240px; }
   .day-number { font-size: 36px; }
@@ -929,12 +935,15 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 <section class="hero">
   <div class="hero-row">
     <div class="hero-text">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18M5 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4M10 19h4M12 15v4"/></svg>
+        <span data-lang="bg">Присъствен семинар &middot; 4 дни</span>
+        <span data-lang="en">In-person seminar &middot; 4 days</span>
+        <span data-lang="es">Seminario presencial &middot; 4 d&iacute;as</span>
+      </div>
       <h1 class="hero-title" data-lang="bg">Квантовият път<br>на <em>душата</em></h1>
       <h1 class="hero-title" data-lang="en">The Quantum Path<br>of the <em>Soul</em></h1>
       <h1 class="hero-title" data-lang="es">El camino cu&aacute;ntico<br>del <em>alma</em></h1>
-      <p class="hero-subtitle" data-lang="bg">Семинар &middot; 4 дни във Валенсия</p>
-      <p class="hero-subtitle" data-lang="en">Seminar &middot; 4 days in Valencia</p>
-      <p class="hero-subtitle" data-lang="es">Seminario &middot; 4 d&iacute;as en Valencia</p>
       <div class="hero-meta">
         <span data-lang="bg">18&ndash;21 септември 2026</span>
         <span data-lang="en">18&ndash;21 September 2026</span>
