@@ -6,6 +6,8 @@
 <title>CODER Valencia 2026 — El camino cuántico del alma</title>
 <meta name="description" content="Seminario CODER en Valencia, 18–21 de septiembre 2026. Cuatro días de conciencia, práctica energética y masterclass de negocio con Olga Loyd, Iskra Katsarska y Nikita Georgiev. Hotel Ilunion Valencia 4. Entradas 200 €, almuerzo incluido.">
 <link rel="canonical" href="https://spain.coderonline.org/">
+<link rel="alternate" hreflang="es" href="https://spain.coderonline.org/">
+<link rel="alternate" hreflang="x-default" href="https://spain.coderonline.org/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <!-- Open Graph (WhatsApp / Facebook / Instagram / LinkedIn link cards) -->
@@ -31,6 +33,47 @@
 
 <link rel="icon" type="image/png" href="images/eye-icon.png">
 <link rel="apple-touch-icon" href="https://spain.coderonline.org/images/eye-icon.png">
+
+<!-- Event structured data (Google rich results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "CODER Valencia 2026 — El camino cuántico del alma",
+  "description": "Seminario de 4 días en Valencia: conciencia, práctica energética y masterclass de negocio con Olga Loyd, Iskra Katsarska y Nikita Georgiev.",
+  "startDate": "2026-09-18T10:00:00+02:00",
+  "endDate": "2026-09-21T17:00:00+02:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "image": ["https://spain.coderonline.org/images/og-cover.jpg"],
+  "inLanguage": ["es", "bg", "en"],
+  "location": {
+    "@type": "Place",
+    "name": "Hotel Ilunion Valencia 4",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "C/ Valle de Ayora 1",
+      "postalCode": "46015",
+      "addressLocality": "Valencia",
+      "addressCountry": "ES"
+    }
+  },
+  "organizer": { "@type": "Organization", "name": "CODER", "url": "https://coderonline.org" },
+  "performer": [
+    { "@type": "Person", "name": "Olga Loyd" },
+    { "@type": "Person", "name": "Iskra Katsarska" },
+    { "@type": "Person", "name": "Nikita Georgiev" }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "200",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": "https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09",
+    "validFrom": "2026-06-19T00:00:00+02:00"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -60,13 +103,21 @@
 html { scroll-behavior: smooth; overflow-x: hidden; }
 
 /* Visible keyboard focus — WCAG 2.4.7. On-brand gold, ~13.7:1 on the deep bg. */
-:where(a, button, [tabindex]):focus-visible {
+:where(a, button, [tabindex]:not([tabindex="-1"])):focus-visible {
   outline: 2px solid var(--gold-light);
   outline-offset: 3px;
   border-radius: 4px;
 }
 /* lang-toggle clips with overflow:hidden, so inset the ring there */
 .lang-toggle button:focus-visible { outline-offset: -2px; }
+
+/* Skip-to-content link (visible only on keyboard focus) */
+.skip-link { position: absolute; left: -9999px; top: 0; z-index: 200; }
+.skip-link:focus {
+  left: 16px; top: 16px; padding: 10px 18px;
+  background: var(--purple); color: #fff; border-radius: 4px;
+  font-family: var(--sans); font-size: 13px; letter-spacing: 1px; text-decoration: none;
+}
 
 body {
   background: var(--bg-deep);
@@ -845,28 +896,34 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 </head>
 <body>
 
+<a href="#main" class="skip-link" data-lang="bg">Към съдържанието</a>
+<a href="#main" class="skip-link" data-lang="en">Skip to content</a>
+<a href="#main" class="skip-link" data-lang="es">Saltar al contenido</a>
+
 <!-- NAV -->
 <nav class="nav" id="nav">
   <a href="#" class="nav-logo">
-    <img src="images/coder-logo.svg" alt="CODER">
+    <img src="images/coder-logo-opt.png" alt="CODER" width="400" height="222">
   </a>
   <div class="lang-toggle">
-    <button class="active" onclick="setLang('es')">ES</button>
-    <button onclick="setLang('bg')">BG</button>
-    <button onclick="setLang('en')">EN</button>
+    <button class="active" type="button" aria-pressed="true" onclick="setLang('es')">ES</button>
+    <button type="button" aria-pressed="false" onclick="setLang('bg')">BG</button>
+    <button type="button" aria-pressed="false" onclick="setLang('en')">EN</button>
   </div>
-  <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('nav-open')">
+  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links" onclick="this.setAttribute('aria-expanded', this.closest('.nav').classList.toggle('nav-open'))">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links">
-    <li><a href="#about" onclick="document.querySelector('.nav').classList.remove('nav-open')"><span data-lang="bg">За събитието</span><span data-lang="en">About</span><span data-lang="es">Evento</span></a></li>
-    <li><a href="#program" onclick="document.querySelector('.nav').classList.remove('nav-open')"><span data-lang="bg">Програма</span><span data-lang="en">Program</span><span data-lang="es">Programa</span></a></li>
-    <li><a href="#speakers" onclick="document.querySelector('.nav').classList.remove('nav-open')"><span data-lang="bg">Лектори</span><span data-lang="en">Speakers</span><span data-lang="es">Ponentes</span></a></li>
-    <li><a href="#details" onclick="document.querySelector('.nav').classList.remove('nav-open')"><span data-lang="bg">Детайли</span><span data-lang="en">Details</span><span data-lang="es">Detalles</span></a></li>
-    <li><a href="#register" onclick="document.querySelector('.nav').classList.remove('nav-open')"><span data-lang="bg">Билети</span><span data-lang="en">Tickets</span><span data-lang="es">Entradas</span></a></li>
-    <li><a href="#contact" onclick="document.querySelector('.nav').classList.remove('nav-open')"><span data-lang="bg">Контакти</span><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a></li>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about" onclick="document.querySelector('.nav').classList.remove('nav-open');document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false')"><span data-lang="bg">За събитието</span><span data-lang="en">About</span><span data-lang="es">Evento</span></a></li>
+    <li><a href="#program" onclick="document.querySelector('.nav').classList.remove('nav-open');document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false')"><span data-lang="bg">Програма</span><span data-lang="en">Program</span><span data-lang="es">Programa</span></a></li>
+    <li><a href="#speakers" onclick="document.querySelector('.nav').classList.remove('nav-open');document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false')"><span data-lang="bg">Лектори</span><span data-lang="en">Speakers</span><span data-lang="es">Ponentes</span></a></li>
+    <li><a href="#details" onclick="document.querySelector('.nav').classList.remove('nav-open');document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false')"><span data-lang="bg">Детайли</span><span data-lang="en">Details</span><span data-lang="es">Detalles</span></a></li>
+    <li><a href="#register" onclick="document.querySelector('.nav').classList.remove('nav-open');document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false')"><span data-lang="bg">Билети</span><span data-lang="en">Tickets</span><span data-lang="es">Entradas</span></a></li>
+    <li><a href="#contact" onclick="document.querySelector('.nav').classList.remove('nav-open');document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false')"><span data-lang="bg">Контакти</span><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a></li>
   </ul>
 </nav>
+
+<main id="main" tabindex="-1">
 
 <!-- HERO -->
 <section class="hero">
@@ -890,16 +947,18 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
       </div>
     </div>
     <div class="hero-photo-wrapper">
-      <img src="images/iskra-olga-opt.png" alt="Искра Кацарска и Олга Лойд" class="hero-photo">
+      <img src="images/iskra-olga-opt.png" alt="Olga Loyd y Iskra Katsarska" class="hero-photo">
     </div>
   </div>
 
   <div class="hero-bottom">
     <div class="hero-cta">
-      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
+      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
     </div>
     <div class="scroll-indicator">
-      <span>Scroll</span>
+      <span data-lang="bg">Надолу</span>
+      <span data-lang="en">Scroll</span>
+      <span data-lang="es">Desliza</span>
     </div>
   </div>
 </section>
@@ -941,7 +1000,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
       </div>
     </div>
     <div class="section-cta reveal">
-      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
+      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
     </div>
   </div>
 </section>
@@ -1055,7 +1114,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
         </div>
 
         <div class="schedule-optional">
-          <h4>20:00 ·La Noche Dorada</h4>
+          <h4>20:00 &middot; <span data-lang="bg">Златната нощ</span><span data-lang="en">The Golden Night</span><span data-lang="es">La Noche Dorada</span></h4>
           <p data-lang="bg">Незадължително вечерно събиране. Вечеря, напитки и разговори под небето на Валенсия. Защото трансформацията не спира, когато лекциите свършат. <span style="color:var(--text-muted);">(Не е включено в цената на билета)</span></p>
           <p data-lang="en">Optional evening gathering. Dinner, drinks, and conversation under the Valencia sky. Because transformation doesn't end when the lectures do. <span style="color:var(--text-muted);">(Not included in ticket price)</span></p>
           <p data-lang="es">Encuentro nocturno opcional. Cena, bebidas y conversaci&oacute;n bajo el cielo de Valencia. Porque la transformaci&oacute;n no termina cuando acaban las conferencias. <span style="color:var(--text-muted);">(No incluido en el precio de la entrada)</span></p>
@@ -1064,7 +1123,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
     </div>
 
     <div class="section-cta reveal">
-      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
+      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
     </div>
   </div>
 </section>
@@ -1122,7 +1181,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
     </div>
 
     <div class="section-cta reveal">
-      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
+      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
     </div>
   </div>
 </section>
@@ -1278,7 +1337,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
     <div class="cta-price-note" data-lang="en">18&ndash;21 September 2026 &middot; Hotel Ilunion Valencia 4 &middot; Lunch included</div>
     <div class="cta-price-note" data-lang="es">18&ndash;21 de septiembre 2026 &middot; Hotel Ilunion Valencia 4 &middot; Almuerzo incluido</div>
 
-    <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary" id="stripe-btn">
+    <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy" id="stripe-btn">
       <span data-lang="bg">Запазете място</span>
       <span data-lang="en">Book Now</span>
       <span data-lang="es">Reserva tu plaza</span>
@@ -1358,20 +1417,22 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-logo">
-      <img src="images/coder-logo.svg" alt="CODER">
+      <img src="images/coder-logo-opt.png" alt="CODER" width="400" height="222">
     </div>
     <div class="footer-links">
-      <a href="https://coderonline.org" target="_blank">CODER Website</a>
-      <a href="https://learn.coderonline.org" target="_blank">CODER Academy</a>
+      <a href="https://coderonline.org" target="_blank"><span data-lang="bg">Уебсайт на CODER</span><span data-lang="en">CODER Website</span><span data-lang="es">Sitio web de CODER</span></a>
+      <a href="https://learn.coderonline.org" target="_blank"><span data-lang="bg">Академия CODER</span><span data-lang="en">CODER Academy</span><span data-lang="es">Academia CODER</span></a>
       <a href="https://www.facebook.com/olga.loyd/" target="_blank">Facebook</a>
       <a href="https://www.youtube.com/@OlgaCoder" target="_blank">YouTube</a>
     </div>
     <div style="margin-top:16px;font-size:11px;color:var(--text-muted);">
-      &copy; 2026 КОДЕР ЕООД &middot; All rights reserved
+      &copy; 2026 КОДЕР ЕООД &middot; <span data-lang="bg">Всички права запазени</span><span data-lang="en">All rights reserved</span><span data-lang="es">Todos los derechos reservados</span>
     </div>
   </div>
 </footer>
@@ -1399,7 +1460,9 @@ function setLang(lang) {
   document.documentElement.lang = lang;
   document.title = PAGE_TITLES[lang] || PAGE_TITLES.es;
   document.querySelectorAll('.lang-toggle button').forEach(btn => {
-    btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+    const isActive = btn.textContent === lang.toUpperCase();
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-pressed', String(isActive));
   });
   try { localStorage.setItem('coder-lang', lang); } catch (e) {}
 }
@@ -1440,6 +1503,10 @@ window.addEventListener('scroll', () => {
   updateFab();
 }, { passive: true });
 updateFab();
+
+// Single source of truth for the Stripe checkout link (markup hrefs stay as the no-JS fallback)
+const STRIPE_URL = 'https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09';
+document.querySelectorAll('a.js-buy').forEach(a => { a.href = STRIPE_URL; });
 </script>
 
 </body>
