@@ -86,7 +86,7 @@
   --bg-elevated: #1a1032;
   --purple: #6b3dc4;
   --purple-light: #d5c1ff;
-  --purple-dim: #8b6bd4;
+  --purple-dim: #9d80df;
   --purple-glow: rgba(107, 61, 196, 0.15);
   --gold: #c9a84c;
   --gold-light: #e8d48b;
@@ -123,7 +123,7 @@ body {
   background: var(--bg-deep);
   color: var(--text-primary);
   font-family: var(--sans);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -159,12 +159,12 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 
 .lang-toggle {
   display: flex; gap: 0; border: 1px solid var(--border-subtle); border-radius: 4px;
-  overflow: hidden; font-size: 11px; font-weight: 500; letter-spacing: 1.5px;
+  overflow: hidden; font-size: 13px; font-weight: 500; letter-spacing: 1.5px;
   margin-left: 16px;
 }
 .lang-toggle button {
-  background: none; border: none; color: var(--text-muted); padding: 6px 12px;
-  cursor: pointer; font-family: var(--sans); font-size: 11px; font-weight: 500;
+  background: none; border: none; color: var(--text-secondary); padding: 11px 16px;
+  cursor: pointer; font-family: var(--sans); font-size: 13px; font-weight: 500;
   letter-spacing: 1.5px; transition: all 0.3s ease;
 }
 .lang-toggle button.active {
@@ -209,7 +209,8 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 .nav-links { display: flex; gap: 28px; list-style: none; }
 .nav-links a {
   font-size: 16px; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase;
-  color: var(--text-muted); text-decoration: none; transition: color 0.3s;
+  color: var(--text-secondary); text-decoration: none; transition: color 0.3s;
+  padding: 6px 2px;
 }
 .nav-links a:hover { color: var(--purple-light); }
 
@@ -319,8 +320,8 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 .btn-primary {
   display: block; width: 100%; max-width: 600px; margin: 0 auto; padding: 26px 40px; text-align: center;
   background: var(--purple); border: 1px solid var(--purple); border-radius: 6px;
-  color: #fff; font-family: var(--sans); font-size: 18px; font-weight: 500;
-  letter-spacing: 4px; text-transform: uppercase; text-decoration: none;
+  color: #fff; font-family: var(--sans); font-size: 18px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
   transition: all 0.4s ease; position: relative; overflow: hidden; cursor: pointer;
 }
 .btn-primary::before {
@@ -438,7 +439,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
   font-family: var(--serif); font-size: 28px; font-weight: 400;
   color: var(--text-primary); margin-bottom: 4px; line-height: 1.3;
 }
-.schedule-content p { font-size: 18px; color: var(--text-muted); line-height: 1.7; }
+.schedule-content p { font-size: 18px; color: var(--text-secondary); line-height: 1.7; }
 .schedule-content .speaker-tag {
   display: inline-block; font-size: 16px; font-weight: 500; letter-spacing: 1.5px;
   text-transform: uppercase; color: var(--purple-dim); margin-top: 6px;
@@ -456,7 +457,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
   font-family: var(--serif); font-size: 20px; font-weight: 400;
   color: var(--gold-light); margin-bottom: 4px;
 }
-.schedule-optional p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+.schedule-optional p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
 
 /* SPEAKERS */
 .speakers { padding: 64px 0; border-top: none; position: relative; }
@@ -626,10 +627,10 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
   transition: color 0.3s ease; word-break: break-word;
 }
 .contact-link:hover { color: var(--purple-light); }
-.contact-actions { display: flex; gap: 10px; margin-top: 10px; }
+.contact-actions { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
 .contact-actions a {
-  font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
-  color: var(--purple-light); text-decoration: none; padding: 6px 16px;
+  font-size: 13px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--purple-light); text-decoration: none; padding: 12px 20px;
   border: 1px solid var(--border-hover); border-radius: 4px; transition: all 0.3s ease;
 }
 .contact-actions a:hover { background: var(--purple); color: #fff; border-color: var(--purple); }
@@ -698,7 +699,8 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 .footer-logo img { height: 160px; width: auto; opacity: 0.5; }
 .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
 .footer-links a {
-  font-size: 12px; color: var(--text-muted); text-decoration: none;
+  font-size: 14px; color: var(--text-secondary); padding: 8px 4px;
+  text-decoration: underline; text-decoration-color: rgba(213, 193, 255, 0.35); text-underline-offset: 3px;
   letter-spacing: 1px; transition: color 0.3s ease;
 }
 .footer-links a:hover { color: var(--purple-light); }
@@ -952,7 +954,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
         <span>Hotel Ilunion Valencia 4</span>
         <span class="dot"></span>
         <span>&euro;200</span>
-        <div class="hero-location">Valencia, Spain</div>
+        <div class="hero-location"><span data-lang="bg">Валенсия, Испания</span><span data-lang="en">Valencia, Spain</span><span data-lang="es">Valencia, Espa&ntilde;a</span></div>
       </div>
     </div>
     <div class="hero-photo-wrapper">
@@ -962,7 +964,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 
   <div class="hero-bottom">
     <div class="hero-cta">
-      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
+      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запази място &middot; 200 &euro;</span><span data-lang="en">Book your place &middot; &euro;200</span><span data-lang="es">Reservar plaza &middot; 200 &euro;</span></a>
     </div>
     <div class="scroll-indicator">
       <span data-lang="bg">Надолу</span>
@@ -1009,7 +1011,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
       </div>
     </div>
     <div class="section-cta reveal">
-      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
+      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запази място &middot; 200 &euro;</span><span data-lang="en">Book your place &middot; &euro;200</span><span data-lang="es">Reservar plaza &middot; 200 &euro;</span></a>
     </div>
   </div>
 </section>
@@ -1132,7 +1134,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
     </div>
 
     <div class="section-cta reveal">
-      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
+      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запази място &middot; 200 &euro;</span><span data-lang="en">Book your place &middot; &euro;200</span><span data-lang="es">Reservar plaza &middot; 200 &euro;</span></a>
     </div>
   </div>
 </section>
@@ -1190,7 +1192,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
     </div>
 
     <div class="section-cta reveal">
-      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запазете място</span><span data-lang="en">Reserve Your Spot</span><span data-lang="es">Reserva tu plaza</span></a>
+      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запази място &middot; 200 &euro;</span><span data-lang="en">Book your place &middot; &euro;200</span><span data-lang="es">Reservar plaza &middot; 200 &euro;</span></a>
     </div>
   </div>
 </section>
@@ -1306,19 +1308,19 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
           <strong>Какво е включено:</strong><br><br>
           Пълен достъп до семинара (18&ndash;21 септември), обяд, материали и ресурси за участниците.
           <br><br>
-          <span style="color:var(--text-muted);font-size:12px;">Настаняване, пътуване и незадължителната вечеря не са включени. Препоръчваме настаняване в центъра на Валенсия за лесен достъп до залата.</span>
+          <span style="color:var(--text-secondary);font-size:14px;">Настаняване, пътуване и незадължителната вечеря не са включени. Препоръчваме настаняване в центъра на Валенсия за лесен достъп до залата.</span>
         </div>
         <div class="logistics-note" data-lang="en">
           <strong>What's included:</strong><br><br>
           Full seminar access (18&ndash;21 September), lunch, and participant materials.
           <br><br>
-          <span style="color:var(--text-muted);font-size:12px;">Accommodation, travel, and the optional evening dinner are not included. We recommend booking accommodation in Valencia's city center for easy access to the venue.</span>
+          <span style="color:var(--text-secondary);font-size:14px;">Accommodation, travel, and the optional evening dinner are not included. We recommend booking accommodation in Valencia's city center for easy access to the venue.</span>
         </div>
         <div class="logistics-note" data-lang="es">
           <strong>Qu&eacute; incluye:</strong><br><br>
           Acceso completo al seminario (18&ndash;21 de septiembre), almuerzo y materiales para los participantes.
           <br><br>
-          <span style="color:var(--text-muted);font-size:12px;">El alojamiento, el viaje y la cena opcional de la noche no est&aacute;n incluidos. Recomendamos reservar alojamiento en el centro de Valencia para facilitar el acceso al lugar.</span>
+          <span style="color:var(--text-secondary);font-size:14px;">El alojamiento, el viaje y la cena opcional de la noche no est&aacute;n incluidos. Recomendamos reservar alojamiento en el centro de Valencia para facilitar el acceso al lugar.</span>
         </div>
       </div>
     </div>
@@ -1347,22 +1349,22 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
     <div class="cta-price-note" data-lang="es">18&ndash;21 de septiembre 2026 &middot; Hotel Ilunion Valencia 4 &middot; Almuerzo incluido</div>
 
     <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy" id="stripe-btn">
-      <span data-lang="bg">Запазете място</span>
-      <span data-lang="en">Book Now</span>
-      <span data-lang="es">Reserva tu plaza</span>
+      <span data-lang="bg">Запази място &middot; 200 &euro;</span>
+      <span data-lang="en">Book your place &middot; &euro;200</span>
+      <span data-lang="es">Reservar plaza &middot; 200 &euro;</span>
     </a>
 
     <div class="cta-subtext" data-lang="bg">
       Ще получите потвърждение на имейла си след успешно плащане.<br><br>
-      <span style="font-size:11px;">Сумите за закупени билети не се възстановяват, освен при официална отмяна на събитието. Цената включва ДДС.</span>
+      <span style="font-size:14px;">Сумите за закупени билети не се възстановяват, освен при официална отмяна на събитието. Цената включва ДДС.</span>
     </div>
     <div class="cta-subtext" data-lang="en">
       You will receive a confirmation email after successful payment.<br><br>
-      <span style="font-size:11px;">Tickets are non-refundable unless the event is officially cancelled. Price includes VAT.</span>
+      <span style="font-size:14px;">Tickets are non-refundable unless the event is officially cancelled. Price includes VAT.</span>
     </div>
     <div class="cta-subtext" data-lang="es">
       Recibir&aacute;s un correo de confirmaci&oacute;n tras el pago.<br><br>
-      <span style="font-size:11px;">Las entradas no son reembolsables salvo cancelaci&oacute;n oficial del evento. El precio incluye IVA.</span>
+      <span style="font-size:14px;">Las entradas no son reembolsables salvo cancelaci&oacute;n oficial del evento. El precio incluye IVA.</span>
     </div>
   </div>
 </section>
@@ -1440,7 +1442,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
       <a href="https://www.facebook.com/olga.loyd/" target="_blank">Facebook</a>
       <a href="https://www.youtube.com/@OlgaCoder" target="_blank">YouTube</a>
     </div>
-    <div style="margin-top:16px;font-size:11px;color:var(--text-muted);">
+    <div style="margin-top:16px;font-size:13px;color:var(--text-muted);">
       &copy; 2026 КОДЕР ЕООД &middot; <span data-lang="bg">Всички права запазени</span><span data-lang="en">All rights reserved</span><span data-lang="es">Todos los derechos reservados</span>
     </div>
   </div>
