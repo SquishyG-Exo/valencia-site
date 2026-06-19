@@ -646,6 +646,30 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 }
 .footer-links a:hover { color: var(--purple-light); }
 
+/* FLOATING CONTACT BUTTON */
+.contact-fab {
+  position: fixed; right: 24px; bottom: 24px; z-index: 90;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 22px; border-radius: 999px;
+  background: rgba(18, 8, 40, 0.85); backdrop-filter: blur(12px);
+  border: 1px solid var(--border-hover); color: var(--purple-light);
+  text-decoration: none; font-family: var(--sans); font-size: 13px;
+  font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  opacity: 0; transform: translateY(16px) scale(0.96); pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease,
+              background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-fab.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.contact-fab:hover {
+  background: var(--purple); color: #fff; border-color: var(--purple-dim);
+  box-shadow: 0 12px 40px rgba(107, 61, 196, 0.4);
+}
+.contact-fab svg { width: 18px; height: 18px; flex: 0 0 auto; }
+@media (max-width: 768px) {
+  .contact-fab { right: 16px; bottom: 16px; padding: 12px 18px; font-size: 12px; letter-spacing: 1.5px; }
+}
+
 /* ANIMATIONS */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -1344,6 +1368,16 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
   </div>
 </footer>
 
+<!-- FLOATING CONTACT BUTTON -->
+<a href="#contact" class="contact-fab" id="contact-fab">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+  </svg>
+  <span class="contact-fab-label" data-lang="bg">Свържете се</span>
+  <span class="contact-fab-label" data-lang="en">Contact us</span>
+  <span class="contact-fab-label" data-lang="es">Contáctanos</span>
+</a>
+
 <script>
 const PAGE_TITLES = {
   bg: 'CODER Valencia 2026 — Квантовият път на душата',
@@ -1377,9 +1411,27 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 const nav = document.getElementById('nav');
+
+// Floating contact button: appear after the hero, hide while the Contact section is on screen
+const contactFab = document.getElementById('contact-fab');
+const contactSection = document.getElementById('contact');
+let contactInView = false;
+function updateFab() {
+  if (!contactFab) return;
+  contactFab.classList.toggle('visible', window.scrollY > 500 && !contactInView);
+}
+if (contactFab && contactSection) {
+  new IntersectionObserver((entries) => {
+    contactInView = entries[0].isIntersecting;
+    updateFab();
+  }, { threshold: 0.15 }).observe(contactSection);
+}
+
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
-});
+  updateFab();
+}, { passive: true });
+updateFab();
 </script>
 
 </body>
