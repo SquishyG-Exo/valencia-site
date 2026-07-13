@@ -1465,7 +1465,7 @@ const PAGE_TITLES = {
   es: 'CODER Valencia 2026 — El camino cuántico del alma'
 };
 
-function setLang(lang) {
+function setLang(lang, persist = true) {
   document.documentElement.classList.remove('lang-en', 'lang-es');
   if (lang !== 'bg') document.documentElement.classList.add('lang-' + lang);
   document.documentElement.lang = lang;
@@ -1475,14 +1475,22 @@ function setLang(lang) {
     btn.classList.toggle('active', isActive);
     btn.setAttribute('aria-pressed', String(isActive));
   });
-  try { localStorage.setItem('coder-lang', lang); } catch (e) {}
+  if (persist) { try { localStorage.setItem('coder-lang', lang); } catch (e) {} }
 }
 
-// Restore the visitor's last language choice (defaults to Spanish)
+// Language on load: an explicit saved choice always wins. Otherwise auto-pick from the
+// visitor's browser language (Bulgarian -> BG, Spanish + Spain's regional tongues -> ES) and
+// leave the baked-in ES default for everyone else. Auto-picks pass persist=false, so a stored
+// value only ever means "the user actually clicked a toggle."
 (function () {
   let saved = null;
   try { saved = localStorage.getItem('coder-lang'); } catch (e) {}
-  if (['bg', 'en', 'es'].includes(saved)) setLang(saved);
+  if (['bg', 'en', 'es'].includes(saved)) { setLang(saved); return; }
+
+  const pref = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
+  if (pref.startsWith('bg')) setLang('bg', false);            // здравей 🇧🇬
+  else if (/^(es|ca|gl|eu)/.test(pref)) setLang('es', false); // hola 🇪🇸 (es / català / galego / euskara)
+  // everyone else keeps the default Spanish page + toggle untouched
 })();
 
 const observer = new IntersectionObserver((entries) => {
