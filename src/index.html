@@ -459,6 +459,17 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 }
 .schedule-optional p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
 
+/* VIDEO EMBED (day 2: Olga's "Places of Power" ep. 5 is literally about Valencia) */
+.video-wrap {
+  position: relative; margin-top: 28px;
+  border: 1px solid var(--border-subtle); border-radius: 8px;
+  overflow: hidden; background: var(--bg-elevated);
+  box-shadow: 0 8px 40px rgba(107, 61, 196, 0.08);
+}
+.video-wrap::before { content: ''; display: block; padding-top: 56.25%; }
+.video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-caption { font-size: 15px; color: var(--text-muted); margin-top: 12px; line-height: 1.6; }
+
 /* SPEAKERS */
 .speakers { padding: 64px 0; border-top: none; position: relative; }
 .speakers::before {
@@ -1110,6 +1121,12 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
         <p class="day-description" data-lang="bg">Водена геомантска разходка из местата на сила на Валенсия. Заедно посещаваме точки със специално енергийно значение в града и работим с полето на всяко от тях.</p>
         <p class="day-description" data-lang="en">A guided geomancy walk through Valencia's places of power. Together we visit points of special energetic significance across the city and work with the field of each site.</p>
         <p class="day-description" data-lang="es">Un paseo geom&aacute;ntico guiado por los lugares de poder de Valencia. Juntos visitamos puntos de especial significado energ&eacute;tico de la ciudad y trabajamos con el campo de cada lugar.</p>
+        <div class="video-wrap">
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vq7Wohn_Otc" title="Валенсия: градът, който приема изоставените | Местата на Силата Еп. 5" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption" data-lang="bg">Видео от поредицата на Олга Лойд „Местата на Силата&ldquo;, еп. 5: Валенсия.</p>
+        <p class="video-caption" data-lang="en">From Olga Loyd's &ldquo;Places of Power&rdquo; series, ep. 5: Valencia. <span style="white-space:nowrap;">(Video in Bulgarian)</span></p>
+        <p class="video-caption" data-lang="es">De la serie &ldquo;Lugares de poder&rdquo; de Olga Loyd, ep. 5: Valencia. <span style="white-space:nowrap;">(V&iacute;deo en b&uacute;lgaro)</span></p>
         <div class="schedule-optional">
           <h4><span data-lang="bg">Вечерта &middot; Обща вечеря</span><span data-lang="en">Evening &middot; Group Dinner</span><span data-lang="es">Por la noche &middot; Cena de grupo</span></h4>
           <p data-lang="bg">След разходката групата продължава към обща вечеря във Валенсия. Всички отиваме заедно. <span style="color:var(--text-muted);">(Не е включена в цената на билета)</span></p>
