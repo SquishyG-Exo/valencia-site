@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CODER Valencia 2026 — El camino cuántico del alma</title>
-<meta name="description" content="Seminario CODER en Valencia, 18–21 de septiembre 2026. Cuatro días de conciencia, práctica energética y masterclass de negocio con Olga Loyd, Iskra Katsarska y Nikita Georgiev. Hotel Ilunion Valencia 4. Entradas 200 €, almuerzo incluido.">
+<meta name="description" content="Encuentro CODER en Valencia, 18–21 de septiembre 2026: bienvenida, paseo geomántico por los lugares de poder y un día de seminario intensivo con Olga Loyd, Iskra Katsarska y Nikita Georgiev. Hotel Ilunion Valencia 4. Entradas 200 €.">
 <link rel="canonical" href="https://spain.coderonline.org/">
 <link rel="alternate" hreflang="es" href="https://spain.coderonline.org/">
 <link rel="alternate" hreflang="x-default" href="https://spain.coderonline.org/">
@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://spain.coderonline.org/">
 <meta property="og:site_name" content="CODER">
 <meta property="og:title" content="CODER Valencia 2026 — El camino cuántico del alma">
-<meta property="og:description" content="Seminario de 4 días en Valencia, 18–21 sep 2026. Conciencia, práctica energética y masterclass de negocio. Entradas 200 €, almuerzo incluido.">
+<meta property="og:description" content="Encuentro CODER en Valencia, 18–21 sep 2026: bienvenida, paseo geomántico por los lugares de poder y un día de seminario intensivo con masterclass de negocio. Entradas 200 €.">
 <meta property="og:image" content="https://spain.coderonline.org/images/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -27,7 +27,7 @@
 <!-- Twitter / X card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CODER Valencia 2026 — El camino cuántico del alma">
-<meta name="twitter:description" content="Seminario de 4 días en Valencia, 18–21 sep 2026. Entradas 200 €, almuerzo incluido.">
+<meta name="twitter:description" content="Encuentro CODER en Valencia, 18–21 sep 2026. Un día de seminario intensivo. Entradas 200 €.">
 <meta name="twitter:image" content="https://spain.coderonline.org/images/og-cover.jpg">
 <meta name="twitter:image:alt" content="CODER Valencia 2026">
 
@@ -40,9 +40,9 @@
   "@context": "https://schema.org",
   "@type": "Event",
   "name": "CODER Valencia 2026 — El camino cuántico del alma",
-  "description": "Seminario de 4 días en Valencia: conciencia, práctica energética y masterclass de negocio con Olga Loyd, Iskra Katsarska y Nikita Georgiev.",
-  "startDate": "2026-09-18T10:00:00+02:00",
-  "endDate": "2026-09-21T17:00:00+02:00",
+  "description": "Encuentro CODER en Valencia, del 18 al 21 de septiembre de 2026: bienvenida, paseo geomántico por los lugares de poder y un día de seminario intensivo con masterclass de negocio. Con Olga Loyd, Iskra Katsarska y Nikita Georgiev.",
+  "startDate": "2026-09-18",
+  "endDate": "2026-09-21",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "image": ["https://spain.coderonline.org/images/og-cover.jpg"],
@@ -634,6 +634,10 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
   border: 1px solid var(--border-hover); border-radius: 4px; transition: all 0.3s ease;
 }
 .contact-actions a:hover { background: var(--purple); color: #fff; border-color: var(--purple); }
+.contact-item-label {
+  font-size: 14px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold-light); margin-bottom: 6px;
+}
 
 /* PAGE GUIDE LINE */
 .page-guide {
@@ -735,6 +739,41 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 }
 @media (max-width: 768px) {
   .contact-fab { right: 16px; bottom: 16px; padding: 16px 26px; font-size: 13px; letter-spacing: 1.5px; }
+}
+
+/* LANGUAGE PICKER MODAL (big, obvious, one tap) */
+.lang-modal {
+  position: fixed; inset: 0; z-index: 300;
+  display: flex; align-items: center; justify-content: center; padding: 24px;
+  background: rgba(10, 0, 31, 0.88); backdrop-filter: blur(10px);
+}
+.lang-modal[hidden] { display: none; }
+.lang-modal-card {
+  width: 100%; max-width: 480px; text-align: center;
+  background: var(--bg-elevated); border: 1px solid var(--border-hover);
+  border-radius: 14px; padding: 44px 36px;
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.55), 0 0 70px rgba(107, 61, 196, 0.18);
+}
+.lang-modal-title span {
+  display: block; font-family: var(--serif); font-weight: 400;
+  color: var(--text-primary); font-size: 27px; line-height: 1.45;
+}
+.lang-modal-buttons { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+.lang-modal-buttons button {
+  width: 100%; padding: 22px 20px;
+  background: var(--purple); border: 1px solid var(--purple-light); border-radius: 8px;
+  color: #fff; font-family: var(--sans); font-size: 26px; font-weight: 600;
+  letter-spacing: 1px; cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+.lang-modal-buttons button:hover {
+  background: var(--purple-dim); transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(107, 61, 196, 0.4);
+}
+@media (max-width: 400px) {
+  .lang-modal-card { padding: 32px 22px; }
+  .lang-modal-title span { font-size: 22px; }
+  .lang-modal-buttons button { font-size: 22px; padding: 18px; }
 }
 
 /* ANIMATIONS */
@@ -939,9 +978,9 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
     <div class="hero-text">
       <div class="hero-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18M5 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4M10 19h4M12 15v4"/></svg>
-        <span data-lang="bg">Присъствен семинар &middot; 4 дни</span>
-        <span data-lang="en">In-person seminar &middot; 4 days</span>
-        <span data-lang="es">Seminario presencial &middot; 4 d&iacute;as</span>
+        <span data-lang="bg">Интензивен присъствен семинар</span>
+        <span data-lang="en">Intensive in-person seminar</span>
+        <span data-lang="es">Seminario intensivo presencial</span>
       </div>
       <h1 class="hero-title" data-lang="bg">Квантовият път<br>на <em>душата</em></h1>
       <h1 class="hero-title" data-lang="en">The Quantum Path<br>of the <em>Soul</em></h1>
@@ -992,7 +1031,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
         </div>
         <div class="intro-text" data-lang="en">
           <p>Four days in the heart of Valencia dedicated to deep awareness and hands-on work with the energy, senses, and gifts you feel but haven't yet learned to direct.</p>
-          <p>A four-day seminar combining consciousness lectures, energetic practice, and a practical business masterclass on building a sustainable practice in the esoterics space. Three speakers, three distinct lenses, one shared field.</p>
+          <p>The gathering is built around one intensive seminar day: consciousness lectures, energetic practice, and a practical business masterclass on building a sustainable practice in the esoterics space. Three speakers, three distinct lenses, one shared field.</p>
         </div>
         <div class="intro-text" data-lang="es">
           <p>Hay un camino que no se ve con los ojos. Se siente.</p>
@@ -1025,26 +1064,79 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
       <div class="section-label" data-lang="bg">Програма</div>
       <div class="section-label" data-lang="en">Program</div>
       <div class="section-label" data-lang="es">Programa</div>
-      <h2 class="section-title" data-lang="bg">Четири дни, една<br>трансформация</h2>
-      <h2 class="section-title" data-lang="en">Four Days, One<br>Transformation</h2>
-      <h2 class="section-title" data-lang="es">Cuatro d&iacute;as, una<br>transformaci&oacute;n</h2>
+      <h2 class="section-title" data-lang="bg">Четири дни заедно,<br>един интензивен семинар</h2>
+      <h2 class="section-title" data-lang="en">Four Days Together,<br>One Intensive Seminar</h2>
+      <h2 class="section-title" data-lang="es">Cuatro d&iacute;as juntos,<br>un seminario intensivo</h2>
     </div>
 
     <div class="days-wrapper">
+      <!-- Day 1 · Friday · arrival evening -->
       <div class="day-block reveal">
         <div class="day-header">
+          <div class="day-number">01</div>
           <div class="day-title-group">
-            <div class="day-date" data-lang="bg">Петък &ndash; Понеделник &middot; 18&ndash;21 септември</div>
-            <div class="day-date" data-lang="en">Friday &ndash; Monday &middot; 18&ndash;21 September</div>
-            <div class="day-date" data-lang="es">Viernes &ndash; Lunes &middot; 18&ndash;21 de septiembre</div>
-            <div class="day-title" data-lang="bg">Семинар</div>
-            <div class="day-title" data-lang="en">Seminar</div>
-            <div class="day-title" data-lang="es">Seminario</div>
-            <div class="day-subtitle" data-lang="bg">10:00 &ndash; 17:00 &middot; ежедневно</div>
-            <div class="day-subtitle" data-lang="en">10:00 &ndash; 17:00 &middot; daily</div>
-            <div class="day-subtitle" data-lang="es">10:00 &ndash; 17:00 &middot; cada d&iacute;a</div>
+            <div class="day-date" data-lang="bg">Петък &middot; 18 септември</div>
+            <div class="day-date" data-lang="en">Friday &middot; 18 September</div>
+            <div class="day-date" data-lang="es">Viernes &middot; 18 de septiembre</div>
+            <div class="day-title" data-lang="bg">Пристигане и посрещане</div>
+            <div class="day-title" data-lang="en">Arrival &amp; Welcome</div>
+            <div class="day-title" data-lang="es">Llegada y bienvenida</div>
+            <div class="day-subtitle" data-lang="bg">Вечерта</div>
+            <div class="day-subtitle" data-lang="en">In the evening</div>
+            <div class="day-subtitle" data-lang="es">Por la noche</div>
           </div>
         </div>
+        <p class="day-description" data-lang="bg">Пристигаме във Валенсия в петък вечерта. Денят е посветен на пристигане, настаняване и събиране на групата: първа възможност да се запознаем и да се настроим към общото поле преди началото на програмата.</p>
+        <p class="day-description" data-lang="en">We arrive in Valencia on Friday evening. The day is dedicated to arrivals, settling in, and bringing the group together: a first opportunity to meet one another and attune to the shared field before the program begins.</p>
+        <p class="day-description" data-lang="es">Llegamos a Valencia el viernes por la noche. El d&iacute;a est&aacute; dedicado a la llegada, el alojamiento y la reuni&oacute;n del grupo: una primera oportunidad para conocernos y sintonizar con el campo com&uacute;n antes del inicio del programa.</p>
+      </div>
+
+      <!-- Day 2 · Saturday · geomancy walk + group dinner -->
+      <div class="day-block reveal">
+        <div class="day-header">
+          <div class="day-number">02</div>
+          <div class="day-title-group">
+            <div class="day-date" data-lang="bg">Събота &middot; 19 септември</div>
+            <div class="day-date" data-lang="en">Saturday &middot; 19 September</div>
+            <div class="day-date" data-lang="es">S&aacute;bado &middot; 19 de septiembre</div>
+            <div class="day-title" data-lang="bg">Геомантска разходка: местата на сила на Валенсия</div>
+            <div class="day-title" data-lang="en">Geomancy Walk: Valencia's Places of Power</div>
+            <div class="day-title" data-lang="es">Paseo geom&aacute;ntico: los lugares de poder de Valencia</div>
+            <div class="day-subtitle" data-lang="bg">През деня</div>
+            <div class="day-subtitle" data-lang="en">During the day</div>
+            <div class="day-subtitle" data-lang="es">Durante el d&iacute;a</div>
+          </div>
+        </div>
+        <p class="day-description" data-lang="bg">Водена геомантска разходка из местата на сила на Валенсия. Заедно посещаваме точки със специално енергийно значение в града и работим с полето на всяко от тях.</p>
+        <p class="day-description" data-lang="en">A guided geomancy walk through Valencia's places of power. Together we visit points of special energetic significance across the city and work with the field of each site.</p>
+        <p class="day-description" data-lang="es">Un paseo geom&aacute;ntico guiado por los lugares de poder de Valencia. Juntos visitamos puntos de especial significado energ&eacute;tico de la ciudad y trabajamos con el campo de cada lugar.</p>
+        <div class="schedule-optional">
+          <h4><span data-lang="bg">Вечерта &middot; Обща вечеря</span><span data-lang="en">Evening &middot; Group Dinner</span><span data-lang="es">Por la noche &middot; Cena de grupo</span></h4>
+          <p data-lang="bg">След разходката групата продължава към обща вечеря във Валенсия. Всички отиваме заедно. <span style="color:var(--text-muted);">(Не е включена в цената на билета)</span></p>
+          <p data-lang="en">After the walk, the group continues to a shared dinner in Valencia. Everyone attends together. <span style="color:var(--text-muted);">(Not included in the ticket price)</span></p>
+          <p data-lang="es">Tras el paseo, el grupo contin&uacute;a con una cena conjunta en Valencia. Vamos todos juntos. <span style="color:var(--text-muted);">(No incluida en el precio de la entrada)</span></p>
+        </div>
+      </div>
+
+      <!-- Day 3 · Sunday · the main seminar + flamenco evening -->
+      <div class="day-block reveal">
+        <div class="day-header">
+          <div class="day-number">03</div>
+          <div class="day-title-group">
+            <div class="day-date" data-lang="bg">Неделя &middot; 20 септември</div>
+            <div class="day-date" data-lang="en">Sunday &middot; 20 September</div>
+            <div class="day-date" data-lang="es">Domingo &middot; 20 de septiembre</div>
+            <div class="day-title" data-lang="bg">Основният семинар</div>
+            <div class="day-title" data-lang="en">The Main Seminar</div>
+            <div class="day-title" data-lang="es">El seminario principal</div>
+            <div class="day-subtitle" data-lang="bg">10:00 &ndash; 17:00</div>
+            <div class="day-subtitle" data-lang="en">10:00 &ndash; 17:00</div>
+            <div class="day-subtitle" data-lang="es">10:00 &ndash; 17:00</div>
+          </div>
+        </div>
+        <p class="day-description" data-lang="bg">Пълният семинарен ден: лекции, групова практика и бизнес майсторски клас.</p>
+        <p class="day-description" data-lang="en">The full seminar day: lectures, group practice, and the business masterclass.</p>
+        <p class="day-description" data-lang="es">El d&iacute;a completo del seminario: conferencias, pr&aacute;ctica grupal y el masterclass de negocio.</p>
 
         <div class="schedule">
           <div class="schedule-item">
@@ -1101,9 +1193,9 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
           <div class="schedule-item schedule-break">
             <div class="schedule-time">13:30 &ndash; 15:00</div>
             <div class="schedule-content">
-              <h4 data-lang="bg">Обяд &middot; включен в билета</h4>
-              <h4 data-lang="en">Lunch &middot; included in ticket</h4>
-              <h4 data-lang="es">Almuerzo &middot; incluido en la entrada</h4>
+              <h4 data-lang="bg">Почивка</h4>
+              <h4 data-lang="en">Break</h4>
+              <h4 data-lang="es">Descanso</h4>
             </div>
           </div>
 
@@ -1125,11 +1217,29 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
         </div>
 
         <div class="schedule-optional">
-          <h4>20:00 &middot; <span data-lang="bg">Златната нощ</span><span data-lang="en">The Golden Night</span><span data-lang="es">La Noche Dorada</span></h4>
-          <p data-lang="bg">Незадължително вечерно събиране. Вечеря, напитки и разговори под небето на Валенсия. Защото трансформацията не спира, когато лекциите свършат. <span style="color:var(--text-muted);">(Не е включено в цената на билета)</span></p>
-          <p data-lang="en">Optional evening gathering. Dinner, drinks, and conversation under the Valencia sky. Because transformation doesn't end when the lectures do. <span style="color:var(--text-muted);">(Not included in ticket price)</span></p>
-          <p data-lang="es">Encuentro nocturno opcional. Cena, bebidas y conversaci&oacute;n bajo el cielo de Valencia. Porque la transformaci&oacute;n no termina cuando acaban las conferencias. <span style="color:var(--text-muted);">(No incluido en el precio de la entrada)</span></p>
+          <h4><span data-lang="bg">Вечерта &middot; Фламенко и напитки</span><span data-lang="en">Evening &middot; Flamenco &amp; Drinks</span><span data-lang="es">Por la noche &middot; Flamenco y copas</span></h4>
+          <p data-lang="bg">След закриването на семинара групата продължава заедно към фламенко представление, последвано от напитки и време заедно под небето на Валенсия. <span style="color:var(--text-muted);">(Не е включено в цената на билета)</span></p>
+          <p data-lang="en">After the seminar closes, the group heads out together to a flamenco performance, followed by drinks and shared time under the Valencia sky. <span style="color:var(--text-muted);">(Not included in the ticket price)</span></p>
+          <p data-lang="es">Tras la clausura del seminario, el grupo asistir&aacute; junto a un espect&aacute;culo de flamenco, seguido de copas y tiempo compartido bajo el cielo de Valencia. <span style="color:var(--text-muted);">(No incluido en el precio de la entrada)</span></p>
         </div>
+      </div>
+
+      <!-- Day 4 · Monday · departure -->
+      <div class="day-block reveal">
+        <div class="day-header">
+          <div class="day-number">04</div>
+          <div class="day-title-group">
+            <div class="day-date" data-lang="bg">Понеделник &middot; 21 септември</div>
+            <div class="day-date" data-lang="en">Monday &middot; 21 September</div>
+            <div class="day-date" data-lang="es">Lunes &middot; 21 de septiembre</div>
+            <div class="day-title" data-lang="bg">Отпътуване</div>
+            <div class="day-title" data-lang="en">Departure</div>
+            <div class="day-title" data-lang="es">Regreso a casa</div>
+          </div>
+        </div>
+        <p class="day-description" data-lang="bg">Програмата приключва. Ден за отпътуване и път към дома.</p>
+        <p class="day-description" data-lang="en">The program concludes. A day for departure and the journey home.</p>
+        <p class="day-description" data-lang="es">El programa concluye. D&iacute;a de salida y viaje de regreso a casa.</p>
       </div>
     </div>
 
@@ -1289,9 +1399,9 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
           <div class="detail-label" data-lang="en">Price</div>
           <div class="detail-label" data-lang="es">Precio</div>
           <div class="detail-value">&euro;200</div>
-          <div class="detail-note" data-lang="bg">391.17 лв &middot; ДДС включен &middot; Обяд включен</div>
-          <div class="detail-note" data-lang="en">VAT included &middot; Lunch included</div>
-          <div class="detail-note" data-lang="es">IVA incluido &middot; Almuerzo incluido</div>
+          <div class="detail-note" data-lang="bg">391.17 лв &middot; ДДС включен</div>
+          <div class="detail-note" data-lang="en">VAT included</div>
+          <div class="detail-note" data-lang="es">IVA incluido</div>
         </div>
         <div class="detail-block">
           <div class="detail-label" data-lang="bg">Език</div>
@@ -1306,21 +1416,21 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
       <div>
         <div class="logistics-note" data-lang="bg">
           <strong>Какво е включено:</strong><br><br>
-          Пълен достъп до семинара (18&ndash;21 септември), обяд, материали и ресурси за участниците.
+          Пълен достъп до програмата на семинара (18&ndash;21 септември), материали и ресурси за участниците.
           <br><br>
-          <span style="color:var(--text-secondary);font-size:14px;">Настаняване, пътуване и незадължителната вечеря не са включени. Препоръчваме настаняване в центъра на Валенсия за лесен достъп до залата.</span>
+          <span style="color:var(--text-secondary);font-size:14px;">Настаняване, пътуване, съботната вечеря и неделната фламенко вечер не са включени в цената. Препоръчваме настаняване в центъра на Валенсия за лесен достъп до залата.</span>
         </div>
         <div class="logistics-note" data-lang="en">
           <strong>What's included:</strong><br><br>
-          Full seminar access (18&ndash;21 September), lunch, and participant materials.
+          Full access to the seminar program (18&ndash;21 September) and participant materials.
           <br><br>
-          <span style="color:var(--text-secondary);font-size:14px;">Accommodation, travel, and the optional evening dinner are not included. We recommend booking accommodation in Valencia's city center for easy access to the venue.</span>
+          <span style="color:var(--text-secondary);font-size:14px;">Accommodation, travel, the Saturday group dinner, and the Sunday flamenco evening are not included. We recommend booking accommodation in Valencia's city center for easy access to the venue.</span>
         </div>
         <div class="logistics-note" data-lang="es">
           <strong>Qu&eacute; incluye:</strong><br><br>
-          Acceso completo al seminario (18&ndash;21 de septiembre), almuerzo y materiales para los participantes.
+          Acceso completo al programa del seminario (18&ndash;21 de septiembre) y materiales para los participantes.
           <br><br>
-          <span style="color:var(--text-secondary);font-size:14px;">El alojamiento, el viaje y la cena opcional de la noche no est&aacute;n incluidos. Recomendamos reservar alojamiento en el centro de Valencia para facilitar el acceso al lugar.</span>
+          <span style="color:var(--text-secondary);font-size:14px;">El alojamiento, el viaje, la cena de grupo del s&aacute;bado y la velada flamenca del domingo no est&aacute;n incluidos. Recomendamos reservar alojamiento en el centro de Valencia para facilitar el acceso al lugar.</span>
         </div>
       </div>
     </div>
@@ -1344,9 +1454,9 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
     <div class="cta-tagline" data-lang="en">&ldquo;Here we stop looking for answers outside.<br>Here we become the answer.&rdquo;</div>
     <div class="cta-tagline" data-lang="es">&ldquo;Aqu&iacute; dejamos de buscar respuestas afuera.<br>Aqu&iacute; nos convertimos en la respuesta.&rdquo;</div>
     <div class="cta-price">&euro;200</div>
-    <div class="cta-price-note" data-lang="bg">18&ndash;21 септември 2026 &middot; Hotel Ilunion Valencia 4 &middot; Обяд включен</div>
-    <div class="cta-price-note" data-lang="en">18&ndash;21 September 2026 &middot; Hotel Ilunion Valencia 4 &middot; Lunch included</div>
-    <div class="cta-price-note" data-lang="es">18&ndash;21 de septiembre 2026 &middot; Hotel Ilunion Valencia 4 &middot; Almuerzo incluido</div>
+    <div class="cta-price-note" data-lang="bg">18&ndash;21 септември 2026 &middot; Hotel Ilunion Valencia 4</div>
+    <div class="cta-price-note" data-lang="en">18&ndash;21 September 2026 &middot; Hotel Ilunion Valencia 4</div>
+    <div class="cta-price-note" data-lang="es">18&ndash;21 de septiembre 2026 &middot; Hotel Ilunion Valencia 4</div>
 
     <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy" id="stripe-btn">
       <span data-lang="bg">Запази място &middot; 200 &euro;</span>
@@ -1378,9 +1488,9 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
     <h2 class="section-title" data-lang="bg">Свържете се с нас</h2>
     <h2 class="section-title" data-lang="en">Get in Touch</h2>
     <h2 class="section-title" data-lang="es">Contáctanos</h2>
-    <p class="contact-intro" data-lang="bg">Имате въпрос за събитието? Пишете ни в WhatsApp, обадете се или ни изпратете имейл.</p>
-    <p class="contact-intro" data-lang="en">Questions about the event? Message us on WhatsApp, give us a call, or send an email.</p>
-    <p class="contact-intro" data-lang="es">¿Tienes preguntas sobre el evento? Escríbenos por WhatsApp, llámanos o envíanos un correo.</p>
+    <p class="contact-intro" data-lang="bg">Имате въпрос за събитието? Пишете ни в WhatsApp, обадете се или ни изпратете имейл. На разположение сме на български, английски и испански.</p>
+    <p class="contact-intro" data-lang="en">Questions about the event? Message us on WhatsApp, give us a call, or send an email. We are available in Bulgarian, English, and Spanish.</p>
+    <p class="contact-intro" data-lang="es">¿Tienes preguntas sobre el evento? Escríbenos por WhatsApp, llámanos o envíanos un correo. Te atendemos en búlgaro, inglés y español.</p>
 
     <div class="contact-grid">
       <div class="contact-card">
@@ -1388,6 +1498,15 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
         <div class="contact-card-label" data-lang="en">Phone / WhatsApp</div>
         <div class="contact-card-label" data-lang="es">Teléfono / WhatsApp</div>
         <div class="contact-item">
+          <div class="contact-item-label"><span data-lang="bg">Български &middot; Олга</span><span data-lang="en">Bulgarian &middot; Olga</span><span data-lang="es">B&uacute;lgaro &middot; Olga</span></div>
+          <a href="https://wa.me/359896774788" target="_blank" class="contact-link">+359 896 774 788</a>
+          <div class="contact-actions">
+            <a href="https://wa.me/359896774788" target="_blank">WhatsApp</a>
+            <a href="tel:+359896774788"><span data-lang="bg">Обади се</span><span data-lang="en">Call</span><span data-lang="es">Llamar</span></a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-label"><span data-lang="bg">Английски &middot; Никита</span><span data-lang="en">English &middot; Nikita</span><span data-lang="es">Ingl&eacute;s &middot; Nikita</span></div>
           <a href="https://wa.me/359895082782" target="_blank" class="contact-link">+359 895 082 782</a>
           <div class="contact-actions">
             <a href="https://wa.me/359895082782" target="_blank">WhatsApp</a>
@@ -1395,10 +1514,11 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
           </div>
         </div>
         <div class="contact-item">
-          <a href="https://wa.me/359896774788" target="_blank" class="contact-link">+359 896 774 788</a>
+          <div class="contact-item-label"><span data-lang="bg">Испански &middot; Искра</span><span data-lang="en">Spanish &middot; Iskra</span><span data-lang="es">Espa&ntilde;ol &middot; Iskra</span></div>
+          <a href="https://wa.me/34611146433" target="_blank" class="contact-link">+34 611 14 64 33</a>
           <div class="contact-actions">
-            <a href="https://wa.me/359896774788" target="_blank">WhatsApp</a>
-            <a href="tel:+359896774788"><span data-lang="bg">Обади се</span><span data-lang="en">Call</span><span data-lang="es">Llamar</span></a>
+            <a href="https://wa.me/34611146433" target="_blank">WhatsApp</a>
+            <a href="tel:+34611146433"><span data-lang="bg">Обади се</span><span data-lang="en">Call</span><span data-lang="es">Llamar</span></a>
           </div>
         </div>
       </div>
@@ -1458,6 +1578,22 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
   <span class="contact-fab-label" data-lang="es">Contáctanos</span>
 </a>
 
+<!-- LANGUAGE PICKER (shown on first visit when there is no saved choice and no ?lang= in the URL) -->
+<div class="lang-modal" id="lang-modal" role="dialog" aria-modal="true" aria-label="Изберете език / Choose your language / Elige tu idioma" hidden>
+  <div class="lang-modal-card">
+    <div class="lang-modal-title">
+      <span lang="es">Elige tu idioma</span>
+      <span lang="bg">Изберете вашия език</span>
+      <span lang="en">Choose your language</span>
+    </div>
+    <div class="lang-modal-buttons">
+      <button type="button" lang="es" onclick="chooseLang('es')">Espa&ntilde;ol</button>
+      <button type="button" lang="bg" onclick="chooseLang('bg')">Български</button>
+      <button type="button" lang="en" onclick="chooseLang('en')">English</button>
+    </div>
+  </div>
+</div>
+
 <script>
 const PAGE_TITLES = {
   bg: 'CODER Valencia 2026 — Квантовият път на душата',
@@ -1478,19 +1614,39 @@ function setLang(lang, persist = true) {
   if (persist) { try { localStorage.setItem('coder-lang', lang); } catch (e) {} }
 }
 
-// Language on load: an explicit saved choice always wins. Otherwise auto-pick from the
-// visitor's browser language (Bulgarian -> BG, Spanish + Spain's regional tongues -> ES) and
-// leave the baked-in ES default for everyone else. Auto-picks pass persist=false, so a stored
-// value only ever means "the user actually clicked a toggle."
+// Language on load, in priority order:
+//   1. ?lang= in the URL. Shared and ad links (e.g. /?lang=es on a Facebook ad) land exactly
+//      on that language, no popup. Not persisted: the link made the choice, not the visitor.
+//   2. A saved choice from a previous visit (the visitor clicked a toggle or the picker).
+//   3. The big language picker. Browser-language guessing is gone, it guessed wrong too often.
+const langModal = document.getElementById('lang-modal');
+
+function openLangModal() {
+  langModal.hidden = false;
+  document.body.style.overflow = 'hidden';
+  const first = langModal.querySelector('button');
+  if (first) first.focus();
+}
+function closeLangModal() {
+  langModal.hidden = true;
+  document.body.style.overflow = '';
+}
+function chooseLang(lang) {
+  setLang(lang); // persists: an explicit click, same as the nav toggle
+  closeLangModal();
+}
+langModal.addEventListener('click', (e) => { if (e.target === langModal) closeLangModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !langModal.hidden) closeLangModal(); });
+
 (function () {
+  const urlLang = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
+  if (['bg', 'en', 'es'].includes(urlLang)) { setLang(urlLang, false); return; }
+
   let saved = null;
   try { saved = localStorage.getItem('coder-lang'); } catch (e) {}
   if (['bg', 'en', 'es'].includes(saved)) { setLang(saved); return; }
 
-  const pref = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
-  if (pref.startsWith('bg')) setLang('bg', false);            // здравей 🇧🇬
-  else if (/^(es|ca|gl|eu)/.test(pref)) setLang('es', false); // hola 🇪🇸 (es / català / galego / euskara)
-  // everyone else keeps the default Spanish page + toggle untouched
+  openLangModal();
 })();
 
 const observer = new IntersectionObserver((entries) => {
