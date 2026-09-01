@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CODER Valencia 2026 — El camino cuántico del alma</title>
-<meta name="description" content="Encuentro CODER en Valencia, 18–21 de septiembre 2026: bienvenida, paseo geomántico por los lugares de poder y un día de seminario intensivo con Olga Loyd, Iskra Katsarska y Nikita Georgiev. Hotel Ilunion Valencia 4. Entradas 200 €.">
+<meta name="description" content="Explora los lugares de poder de Valencia y aprende a dirigir tu sensibilidad. Encuentro CODER del 18 al 21 de septiembre de 2026: paseo geomántico, seminario intensivo y masterclass de negocio. Entrada: 200 €.">
 <link rel="canonical" href="https://spain.coderonline.org/">
-<link rel="alternate" hreflang="es" href="https://spain.coderonline.org/">
+<link rel="alternate" hreflang="es" href="https://spain.coderonline.org/?lang=es">
+<link rel="alternate" hreflang="bg" href="https://spain.coderonline.org/?lang=bg">
+<link rel="alternate" hreflang="en" href="https://spain.coderonline.org/?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://spain.coderonline.org/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
@@ -15,7 +17,7 @@
 <meta property="og:url" content="https://spain.coderonline.org/">
 <meta property="og:site_name" content="CODER">
 <meta property="og:title" content="CODER Valencia 2026 — El camino cuántico del alma">
-<meta property="og:description" content="Encuentro CODER en Valencia, 18–21 sep 2026: bienvenida, paseo geomántico por los lugares de poder y un día de seminario intensivo con masterclass de negocio. Entradas 200 €.">
+<meta property="og:description" content="Explora los lugares de poder de Valencia y aprende a dirigir tu sensibilidad. Paseo geomántico + seminario presencial, 18–21 sep 2026. Entrada: 200 €.">
 <meta property="og:image" content="https://spain.coderonline.org/images/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -27,7 +29,7 @@
 <!-- Twitter / X card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CODER Valencia 2026 — El camino cuántico del alma">
-<meta name="twitter:description" content="Encuentro CODER en Valencia, 18–21 sep 2026. Un día de seminario intensivo. Entradas 200 €.">
+<meta name="twitter:description" content="Lugares de poder, práctica energética y seminario presencial en Valencia, 18–21 sep 2026. Entrada: 200 €.">
 <meta name="twitter:image" content="https://spain.coderonline.org/images/og-cover.jpg">
 <meta name="twitter:image:alt" content="CODER Valencia 2026">
 
@@ -161,6 +163,7 @@ html.lang-en div[data-lang="en"], html.lang-es div[data-lang="es"],
 html.lang-en p[data-lang="en"], html.lang-es p[data-lang="es"],
 html.lang-en h1[data-lang="en"], html.lang-es h1[data-lang="es"],
 html.lang-en h2[data-lang="en"], html.lang-es h2[data-lang="es"],
+html.lang-en h3[data-lang="en"], html.lang-es h3[data-lang="es"],
 html.lang-en h4[data-lang="en"], html.lang-es h4[data-lang="es"] { display: block !important; }
 html.lang-en .hero-meta span[data-lang="en"], html.lang-es .hero-meta span[data-lang="es"],
 html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="es"] { display: inline-block !important; }
@@ -263,6 +266,13 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
   line-height: 1.05; color: var(--text-primary); margin-bottom: 20px;
 }
 .hero-title em { font-style: italic; color: var(--purple-light); }
+.hero-promise {
+  max-width: 720px; margin: 0 auto 24px;
+  font-family: var(--serif); font-size: clamp(23px, 2.4vw, 34px); font-weight: 400;
+  line-height: 1.35; color: var(--text-primary);
+  text-wrap: balance;
+}
+.hero-promise strong { color: var(--gold-light); font-weight: 500; }
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 9px;
@@ -323,6 +333,21 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
   text-align: center; width: 100%;
   opacity: 0; animation: fadeUp 1s ease 0.8s forwards;
 }
+.cta-actions {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  width: 100%; max-width: 880px; margin: 0 auto; flex-wrap: wrap;
+}
+.cta-actions .btn-primary { flex: 1 1 420px; margin: 0; }
+.btn-secondary {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 78px; flex: 1 1 280px; padding: 20px 30px;
+  border: 1px solid rgba(213, 193, 255, 0.6); border-radius: 6px;
+  color: var(--purple-light); background: rgba(10, 0, 31, 0.55);
+  font-family: var(--sans); font-size: 15px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.btn-secondary:hover { background: var(--purple-light); color: var(--bg-deep); border-color: var(--purple-light); }
 
 /* Buttons */
 .btn-primary {
@@ -388,6 +413,13 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
   color: var(--purple-light); line-height: 1.5; padding-left: 32px;
   border-left: 2px solid var(--gold-dim); align-self: center;
 }
+.valencia-story { margin-top: 64px; }
+.valencia-story-header { max-width: 780px; margin-bottom: 28px; }
+.valencia-story-title {
+  font-family: var(--serif); font-size: clamp(32px, 5vw, 54px); font-weight: 300;
+  line-height: 1.2; color: var(--text-primary); margin-bottom: 14px;
+}
+.valencia-story-copy { font-size: 19px; color: var(--text-secondary); line-height: 1.8; }
 
 /* PROGRAM */
 .program { padding: 64px 0; border-top: none; position: relative; }
@@ -397,6 +429,27 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
   background: linear-gradient(to right, transparent, var(--purple-dim), transparent);
 }
 .days-wrapper { margin-top: 36px; display: flex; flex-direction: column; gap: 48px; }
+.experience-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 36px;
+}
+.experience-card {
+  background: linear-gradient(145deg, var(--bg-card), var(--bg-elevated));
+  border: 1px solid var(--border-subtle); border-radius: 8px; padding: 28px;
+}
+.experience-kicker {
+  color: var(--gold-light); font-size: 13px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;
+}
+.experience-card h3 {
+  font-family: var(--serif); font-size: 27px; font-weight: 400;
+  line-height: 1.25; margin-bottom: 10px;
+}
+.experience-card p { color: var(--text-secondary); font-size: 16px; line-height: 1.7; }
+.program-truth {
+  margin-top: 24px; padding: 20px 24px; border-left: 2px solid var(--gold-dim);
+  background: rgba(201, 168, 76, 0.05); color: var(--text-secondary);
+  font-size: 17px; line-height: 1.7;
+}
 .day-block {
   background: var(--bg-card); border: 1px solid var(--border-subtle);
   padding: 48px; position: relative; border-radius: 8px;
@@ -565,6 +618,44 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
   border-radius: 0 8px 8px 0;
 }
 .logistics-note strong { color: var(--text-primary); font-weight: 500; }
+
+/* FAQ */
+.faq { padding: 64px 0; position: relative; }
+.faq::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 200px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--purple-dim), transparent);
+}
+.faq-list { max-width: 880px; margin-top: 36px; }
+.faq-item {
+  background: var(--bg-card); border: 1px solid var(--border-subtle);
+  border-radius: 8px; margin-bottom: 14px; overflow: hidden;
+}
+.faq-item summary {
+  position: relative; cursor: pointer; list-style: none; padding: 24px 64px 24px 26px;
+  font-family: var(--serif); font-size: 24px; line-height: 1.3; color: var(--text-primary);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; position: absolute; right: 26px; top: 50%; transform: translateY(-50%);
+  color: var(--purple-light); font-family: var(--sans); font-size: 25px;
+}
+.faq-item[open] summary::after { content: '−'; }
+.faq-answer { padding: 0 26px 24px; color: var(--text-secondary); font-size: 17px; line-height: 1.8; }
+.decision-box {
+  max-width: 880px; margin-top: 30px; padding: 30px;
+  background: linear-gradient(135deg, rgba(107, 61, 196, 0.18), rgba(201, 168, 76, 0.06));
+  border: 1px solid var(--border-hover); border-radius: 10px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+.decision-copy h3 { font-family: var(--serif); font-size: 28px; font-weight: 400; margin-bottom: 6px; }
+.decision-copy p { color: var(--text-secondary); font-size: 16px; }
+.decision-link {
+  flex: 0 0 auto; display: inline-block; padding: 16px 24px; border-radius: 6px;
+  background: var(--purple); color: #fff; text-decoration: none; text-align: center;
+  font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+}
+.decision-link:hover { background: var(--purple-dim); }
 
 /* CTA */
 .cta { padding: 64px 0 80px; text-align: center; position: relative; }
@@ -849,6 +940,7 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .speakers-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .experience-grid { grid-template-columns: 1fr; }
 }
 /* Hamburger button — hidden on desktop */
 .nav-hamburger {
@@ -885,6 +977,7 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
   .hero-row { flex-direction: column; text-align: center; gap: 0; align-items: center; width: 100%; }
   .hero-text { text-align: center; padding-bottom: 10px; width: 100%; display: flex; flex-direction: column; align-items: center; }
   .hero-title { font-size: clamp(52px, 14vw, 72px); }
+  .hero-promise { font-size: 21px; margin-bottom: 18px; }
   .hero-badge { margin-bottom: 16px; padding: 10px 20px; font-size: 13px; }
   .hero-meta { justify-content: center; flex-direction: column; gap: 3px; font-size: 15px; padding: 10px 18px; text-align: center; width: auto; }
   .hero-meta .dot { display: none; }
@@ -896,6 +989,9 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
   .hero-photo { margin-top: -25%; transform: scale(1.1); }
   .hero-bottom { padding-bottom: 12px; margin-top: 8px; }
   .hero-cta { margin-top: 0; }
+  .cta-actions { gap: 10px; }
+  .cta-actions .btn-primary, .cta-actions .btn-secondary { flex-basis: 100%; min-height: 0; }
+  .btn-secondary { padding: 16px 24px; font-size: 12px; }
   .scroll-indicator { display: none; }
 
   /* Content sections mobile */
@@ -905,9 +1001,13 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
   .intro-grid { gap: 32px; }
   .intro-text { font-size: 17px; }
   .intro-quote { font-size: 22px; padding-left: 20px; }
+  .valencia-story { margin-top: 44px; }
+  .valencia-story-copy { font-size: 17px; }
 
-  .program, .speakers, .audience, .logistics { padding: 48px 0; }
+  .program, .speakers, .audience, .logistics, .faq { padding: 48px 0; }
   .section-title { font-size: clamp(28px, 8vw, 40px); }
+  .experience-card { padding: 22px; }
+  .program-truth { font-size: 15px; }
   .day-block { padding: 24px 20px; }
   .day-header { gap: 12px; }
   .day-number { font-size: 46px; }
@@ -945,6 +1045,11 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
   .contact-grid { grid-template-columns: 1fr; gap: 20px; }
   .contact-intro { font-size: 17px; margin-bottom: 28px; }
   .contact-link { font-size: 20px; }
+  .faq-item summary { padding: 20px 52px 20px 20px; font-size: 21px; }
+  .faq-item summary::after { right: 20px; }
+  .faq-answer { padding: 0 20px 20px; font-size: 15px; }
+  .decision-box { align-items: stretch; flex-direction: column; padding: 24px 20px; }
+  .decision-link { width: 100%; }
 
   /* Footer mobile */
   .footer-logo img { height: 100px; }
@@ -1015,6 +1120,7 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
     <li><a href="#program" onclick="document.querySelector('.nav').classList.remove('nav-open');document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false')"><span data-lang="bg">Програма</span><span data-lang="en">Program</span><span data-lang="es">Programa</span></a></li>
     <li><a href="#speakers" onclick="document.querySelector('.nav').classList.remove('nav-open');document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false')"><span data-lang="bg">Лектори</span><span data-lang="en">Speakers</span><span data-lang="es">Ponentes</span></a></li>
     <li><a href="#details" onclick="document.querySelector('.nav').classList.remove('nav-open');document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false')"><span data-lang="bg">Детайли</span><span data-lang="en">Details</span><span data-lang="es">Detalles</span></a></li>
+    <li><a href="#faq" onclick="document.querySelector('.nav').classList.remove('nav-open');document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false')"><span data-lang="bg">Въпроси</span><span data-lang="en">FAQ</span><span data-lang="es">Preguntas</span></a></li>
     <li><a href="#register" onclick="document.querySelector('.nav').classList.remove('nav-open');document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false')"><span data-lang="bg">Билети</span><span data-lang="en">Tickets</span><span data-lang="es">Entradas</span></a></li>
     <li><a href="#contact" onclick="document.querySelector('.nav').classList.remove('nav-open');document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false')"><span data-lang="bg">Контакти</span><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a></li>
   </ul>
@@ -1028,13 +1134,16 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
     <div class="hero-text">
       <div class="hero-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18M5 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4M10 19h4M12 15v4"/></svg>
-        <span data-lang="bg">Интензивен присъствен семинар</span>
-        <span data-lang="en">Intensive in-person seminar</span>
-        <span data-lang="es">Seminario intensivo presencial</span>
+        <span data-lang="bg">Местата на сила &middot; Валенсия</span>
+        <span data-lang="en">Places of Power &middot; Valencia</span>
+        <span data-lang="es">Lugares de poder &middot; Valencia</span>
       </div>
       <h1 class="hero-title" data-lang="bg">Квантовият път<br>на <em>душата</em></h1>
       <h1 class="hero-title" data-lang="en">The Quantum Path<br>of the <em>Soul</em></h1>
       <h1 class="hero-title" data-lang="es">El camino cu&aacute;ntico<br>del <em>alma</em></h1>
+      <p class="hero-promise" data-lang="bg">Усещате повече, отколкото можете да обясните? <strong>Научете се да насочвате своята чувствителност</strong> в полето на Валенсия.</p>
+      <p class="hero-promise" data-lang="en">Do you sense more than you can explain? <strong>Learn to direct your sensitivity</strong> in the field of Valencia.</p>
+      <p class="hero-promise" data-lang="es">&iquest;Sientes m&aacute;s de lo que puedes explicar? <strong>Aprende a dirigir tu sensibilidad</strong> en el campo de Valencia.</p>
       <div class="hero-meta">
         <span data-lang="bg">18&ndash;21 септември 2026</span>
         <span data-lang="en">18&ndash;21 September 2026</span>
@@ -1053,7 +1162,10 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
 
   <div class="hero-bottom">
     <div class="hero-cta">
-      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запази място &middot; 200 &euro;</span><span data-lang="en">Book your place &middot; &euro;200</span><span data-lang="es">Reservar plaza &middot; 200 &euro;</span></a>
+      <div class="cta-actions">
+        <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" rel="noopener" class="btn-primary js-buy"><span data-lang="bg">Запази място &middot; 200 &euro;</span><span data-lang="en">Book your place &middot; &euro;200</span><span data-lang="es">Reservar plaza &middot; 200 &euro;</span></a>
+        <a href="#valencia-film" class="btn-secondary"><span data-lang="bg">Защо Валенсия? Гледайте</span><span data-lang="en">Why Valencia? Watch</span><span data-lang="es">&iquest;Por qu&eacute; Valencia? Ver</span></a>
+      </div>
     </div>
     <div class="scroll-indicator">
       <span data-lang="bg">Надолу</span>
@@ -1076,17 +1188,17 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
         <div class="section-label" data-lang="es">Sobre el evento</div>
         <div class="intro-text" data-lang="bg">
           <p>Има път, който не се вижда с очи. Той се усеща.</p>
-          <p>Четири дни в сърцето на Валенсия, посветени на дълбоко осъзнаване и практическа работа с енергията, сетивата и дарбите, които усещате, но все още не сте се научили да управлявате.</p>
-          <p>Олга Лойд, Искра Кацарска и Никита Георгиев ви канят на интензивен семинар, в който теорията среща практиката, индивидуалното намерение среща груповата енергия, а бизнес стратегията среща духовната мисия.</p>
+          <p>Това е присъствено преживяване във Валенсия с две основни части: водена геомантска разходка из местата на сила в събота и интензивен семинар с практика в неделя.</p>
+          <p>Ще работите с Олга Лойд и Искра Кацарска върху чувствителността, енергийните полета и метода КОДЕР. Бизнес майсторският клас на Никита Георгиев е включен бонус за хората, които искат да превърнат своята практика в устойчива работа.</p>
         </div>
         <div class="intro-text" data-lang="en">
-          <p>Four days in the heart of Valencia dedicated to deep awareness and hands-on work with the energy, senses, and gifts you feel but haven't yet learned to direct.</p>
-          <p>The gathering is built around one intensive seminar day: consciousness lectures, energetic practice, and a practical business masterclass on building a sustainable practice in the esoterics space. Three speakers, three distinct lenses, one shared field.</p>
+          <p>This is an in-person Valencia experience with two core parts: a guided geomancy walk through the city's places of power on Saturday and an intensive seminar with practice on Sunday.</p>
+          <p>You will work with Olga Loyd and Iskra Katsarska on sensitivity, energy fields, and the CODER method. Nikita Georgiev's business masterclass is an included bonus for those who want to turn their practice into sustainable work.</p>
         </div>
         <div class="intro-text" data-lang="es">
           <p>Hay un camino que no se ve con los ojos. Se siente.</p>
-          <p>Cuatro d&iacute;as en el coraz&oacute;n de Valencia dedicados a la conciencia profunda y al trabajo pr&aacute;ctico con la energ&iacute;a, los sentidos y los dones que sientes pero que a&uacute;n no has aprendido a dirigir.</p>
-          <p>Olga Loyd, Iskra Katsarska y Nikita Georgiev te invitan a un seminario intensivo donde la teor&iacute;a se encuentra con la pr&aacute;ctica, la intenci&oacute;n individual se encuentra con la energ&iacute;a grupal, y la estrategia empresarial se encuentra con la misi&oacute;n espiritual.</p>
+          <p>Esta es una experiencia presencial en Valencia con dos partes centrales: un paseo geom&aacute;ntico guiado por los lugares de poder de la ciudad el s&aacute;bado y un seminario intensivo con pr&aacute;ctica el domingo.</p>
+          <p>Trabajar&aacute;s con Olga Loyd e Iskra Katsarska la sensibilidad, los campos energ&eacute;ticos y el m&eacute;todo CODER. La masterclass de negocio de Nikita Georgiev es un bonus incluido para quienes quieran convertir su pr&aacute;ctica en un trabajo sostenible.</p>
         </div>
       </div>
       <div class="intro-quote" data-lang="bg">
@@ -1099,8 +1211,21 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
         &ldquo;El problema no es que algo est&eacute; mal contigo. El problema es que llevas m&aacute;s sensibilidad de la que has aprendido a gestionar. Son dones sin activar.&rdquo;
       </div>
     </div>
-    <div class="section-cta reveal">
-      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запази място &middot; 200 &euro;</span><span data-lang="en">Book your place &middot; &euro;200</span><span data-lang="es">Reservar plaza &middot; 200 &euro;</span></a>
+    <div class="valencia-story reveal" id="valencia-film">
+      <div class="valencia-story-header">
+        <div class="section-label" data-lang="bg">Защо Валенсия</div>
+        <div class="section-label" data-lang="en">Why Valencia</div>
+        <div class="section-label" data-lang="es">Por qu&eacute; Valencia</div>
+        <h2 class="valencia-story-title" data-lang="bg">Градът, който приема изоставените</h2>
+        <h2 class="valencia-story-title" data-lang="en">The city that receives the abandoned</h2>
+        <h2 class="valencia-story-title" data-lang="es">La ciudad que recibe a los abandonados</h2>
+        <p class="valencia-story-copy" data-lang="bg">Преди да решите дали това събитие е за вас, вижте как Олга разчита полето на Валенсия в епизод 5 от „Местата на Силата&ldquo;.</p>
+        <p class="valencia-story-copy" data-lang="en">Before deciding whether this gathering is for you, see how Olga reads Valencia's field in episode 5 of &ldquo;Places of Power.&rdquo; The video is in Bulgarian.</p>
+        <p class="valencia-story-copy" data-lang="es">Antes de decidir si este encuentro es para ti, descubre c&oacute;mo Olga interpreta el campo de Valencia en el episodio 5 de &ldquo;Lugares de poder&rdquo;. El v&iacute;deo est&aacute; en b&uacute;lgaro.</p>
+      </div>
+      <div class="video-wrap">
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vq7Wohn_Otc" title="Валенсия: градът, който приема изоставените | Местата на Силата Еп. 5" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 </section>
@@ -1114,9 +1239,32 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
       <div class="section-label" data-lang="bg">Програма</div>
       <div class="section-label" data-lang="en">Program</div>
       <div class="section-label" data-lang="es">Programa</div>
-      <h2 class="section-title" data-lang="bg">Четири дни заедно,<br>един интензивен семинар</h2>
-      <h2 class="section-title" data-lang="en">Four Days Together,<br>One Intensive Seminar</h2>
-      <h2 class="section-title" data-lang="es">Cuatro d&iacute;as juntos,<br>un seminario intensivo</h2>
+      <h2 class="section-title" data-lang="bg">Един уикенд.<br>Две основни преживявания.</h2>
+      <h2 class="section-title" data-lang="en">One Weekend.<br>Two Core Experiences.</h2>
+      <h2 class="section-title" data-lang="es">Un fin de semana.<br>Dos experiencias centrales.</h2>
+    </div>
+
+    <div class="experience-grid reveal-stagger">
+      <article class="experience-card reveal">
+        <div class="experience-kicker" data-lang="bg">Събота</div><div class="experience-kicker" data-lang="en">Saturday</div><div class="experience-kicker" data-lang="es">S&aacute;bado</div>
+        <h3 data-lang="bg">Местата на сила</h3><h3 data-lang="en">Places of Power</h3><h3 data-lang="es">Lugares de poder</h3>
+        <p data-lang="bg">Водена геомантска разходка и практическа работа с полето на Валенсия.</p><p data-lang="en">A guided geomancy walk and practical work with Valencia's field.</p><p data-lang="es">Paseo geom&aacute;ntico guiado y trabajo pr&aacute;ctico con el campo de Valencia.</p>
+      </article>
+      <article class="experience-card reveal">
+        <div class="experience-kicker" data-lang="bg">Неделя</div><div class="experience-kicker" data-lang="en">Sunday</div><div class="experience-kicker" data-lang="es">Domingo</div>
+        <h3 data-lang="bg">Интензивен семинар</h3><h3 data-lang="en">Intensive Seminar</h3><h3 data-lang="es">Seminario intensivo</h3>
+        <p data-lang="bg">Лекции, групова настройка и практика със съзнанието, чувствителността и метода КОДЕР.</p><p data-lang="en">Lectures, group attunement, and practice with consciousness, sensitivity, and the CODER method.</p><p data-lang="es">Conferencias, sintonizaci&oacute;n grupal y pr&aacute;ctica con la conciencia, la sensibilidad y el m&eacute;todo CODER.</p>
+      </article>
+      <article class="experience-card reveal">
+        <div class="experience-kicker" data-lang="bg">Включен бонус</div><div class="experience-kicker" data-lang="en">Included Bonus</div><div class="experience-kicker" data-lang="es">Bonus incluido</div>
+        <h3 data-lang="bg">Бизнесът на интуицията</h3><h3 data-lang="en">The Business of Intuition</h3><h3 data-lang="es">El negocio de la intuici&oacute;n</h3>
+        <p data-lang="bg">Практическа стратегия за практици, които искат да превърнат своето призвание в устойчива работа.</p><p data-lang="en">Practical strategy for practitioners who want to turn their calling into sustainable work.</p><p data-lang="es">Estrategia pr&aacute;ctica para profesionales que quieren convertir su vocaci&oacute;n en un trabajo sostenible.</p>
+      </article>
+    </div>
+    <div class="program-truth reveal">
+      <span data-lang="bg"><strong>Ясно и честно:</strong> петък е за пристигане и посрещане, събота е геомантската разходка, неделя е основният семинар, а понеделник е ден за отпътуване.</span>
+      <span data-lang="en"><strong>Clear and simple:</strong> Friday is arrival and welcome, Saturday is the geomancy walk, Sunday is the main seminar, and Monday is departure day.</span>
+      <span data-lang="es"><strong>Claro y sencillo:</strong> el viernes es la llegada y bienvenida, el s&aacute;bado el paseo geom&aacute;ntico, el domingo el seminario principal y el lunes la salida.</span>
     </div>
 
     <div class="days-wrapper">
@@ -1160,12 +1308,6 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
         <p class="day-description" data-lang="bg">Водена геомантска разходка из местата на сила на Валенсия. Заедно посещаваме точки със специално енергийно значение в града и работим с полето на всяко от тях.</p>
         <p class="day-description" data-lang="en">A guided geomancy walk through Valencia's places of power. Together we visit points of special energetic significance across the city and work with the field of each site.</p>
         <p class="day-description" data-lang="es">Un paseo geom&aacute;ntico guiado por los lugares de poder de Valencia. Juntos visitamos puntos de especial significado energ&eacute;tico de la ciudad y trabajamos con el campo de cada lugar.</p>
-        <div class="video-wrap">
-          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vq7Wohn_Otc" title="Валенсия: градът, който приема изоставените | Местата на Силата Еп. 5" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <p class="video-caption" data-lang="bg">Видео от поредицата на Олга Лойд „Местата на Силата&ldquo;, еп. 5: Валенсия.</p>
-        <p class="video-caption" data-lang="en">From Olga Loyd's &ldquo;Places of Power&rdquo; series, ep. 5: Valencia. <span style="white-space:nowrap;">(Video in Bulgarian)</span></p>
-        <p class="video-caption" data-lang="es">De la serie &ldquo;Lugares de poder&rdquo; de Olga Loyd, ep. 5: Valencia. <span style="white-space:nowrap;">(V&iacute;deo en b&uacute;lgaro)</span></p>
         <div class="schedule-optional">
           <h4><span data-lang="bg">Вечерта &middot; Обща вечеря</span><span data-lang="en">Evening &middot; Group Dinner</span><span data-lang="es">Por la noche &middot; Cena de grupo</span></h4>
           <p data-lang="bg">След разходката групата продължава към обща вечеря във Валенсия. Всички отиваме заедно. <span style="color:var(--text-muted);">(Не е включена в цената на билета)</span></p>
@@ -1261,6 +1403,7 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
               <h4 data-lang="bg">Бизнесът на интуицията</h4>
               <h4 data-lang="en">The Business of Intuition</h4>
               <h4 data-lang="es">El negocio de la intuici&oacute;n</h4>
+              <div class="experience-kicker"><span data-lang="bg">Включен бонус</span><span data-lang="en">Included bonus</span><span data-lang="es">Bonus incluido</span></div>
               <p data-lang="bg">Практически майсторски клас за изграждане, управление и мащабиране на бизнес в езотеричното пространство. Позициониране на бранда, привличане на клиенти, финансова архитектура и дигитална инфраструктура. От първия клиент до устойчива практика.</p>
               <p data-lang="en">A practical masterclass on building, managing, and scaling a business in the esoterics space. Brand positioning, client acquisition, financial architecture, and digital infrastructure. From first client to sustainable practice. No fluff, all strategy.</p>
               <p data-lang="es">Un masterclass pr&aacute;ctico sobre c&oacute;mo construir, gestionar y escalar un negocio en el espacio esot&eacute;rico. Posicionamiento de marca, captaci&oacute;n de clientes, arquitectura financiera e infraestructura digital. Del primer cliente a una pr&aacute;ctica sostenible.</p>
@@ -1300,7 +1443,10 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
     </div>
 
     <div class="section-cta reveal">
-      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запази място &middot; 200 &euro;</span><span data-lang="en">Book your place &middot; &euro;200</span><span data-lang="es">Reservar plaza &middot; 200 &euro;</span></a>
+      <div class="cta-actions">
+        <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" rel="noopener" class="btn-primary js-buy"><span data-lang="bg">Запази място &middot; 200 &euro;</span><span data-lang="en">Book your place &middot; &euro;200</span><span data-lang="es">Reservar plaza &middot; 200 &euro;</span></a>
+        <a href="#details" class="btn-secondary"><span data-lang="bg">Какво точно е включено?</span><span data-lang="en">What exactly is included?</span><span data-lang="es">&iquest;Qu&eacute; incluye exactamente?</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -1357,9 +1503,6 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
       </div>
     </div>
 
-    <div class="section-cta reveal">
-      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy"><span data-lang="bg">Запази място &middot; 200 &euro;</span><span data-lang="en">Book your place &middot; &euro;200</span><span data-lang="es">Reservar plaza &middot; 200 &euro;</span></a>
-    </div>
   </div>
 </section>
 
@@ -1395,12 +1538,12 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
         <p data-lang="es">Has le&iacute;do los libros y visto los v&iacute;deos. Ahora quieres pr&aacute;ctica real, retroalimentaci&oacute;n real y un marco que convierta la conciencia en capacidad diaria.</p>
       </div>
       <div class="audience-item reveal">
-        <h4 data-lang="bg">Искате да превърнете мисията в бизнес</h4>
-        <h4 data-lang="en">You want to turn your mission into a business</h4>
-        <h4 data-lang="es">Quieres convertir tu misi&oacute;n en un negocio</h4>
-        <p data-lang="bg">Имате дарба и призвание, но нямате пътна карта как да ги направите устойчиви. Бизнес майсторският клас свързва духовната практика с професионалната реалност.</p>
-        <p data-lang="en">You have a gift and a calling but no roadmap to make it sustainable. The business masterclass bridges spiritual practice and professional reality.</p>
-        <p data-lang="es">Tienes un don y una vocaci&oacute;n pero no tienes una hoja de ruta para hacerlo sostenible. El masterclass de negocios conecta la pr&aacute;ctica espiritual con la realidad profesional.</p>
+        <h4 data-lang="bg">Искате да преживеете мястото, не само да го видите</h4>
+        <h4 data-lang="en">You want to experience a place, not just see it</h4>
+        <h4 data-lang="es">Quieres experimentar un lugar, no solo verlo</h4>
+        <p data-lang="bg">Валенсия не е просто фон на събитието. Геомантската разходка ви извежда от залата, за да наблюдавате и усещате полето на града на място.</p>
+        <p data-lang="en">Valencia is not just the event's backdrop. The geomancy walk takes you out of the seminar room to observe and sense the city's field in place.</p>
+        <p data-lang="es">Valencia no es solo el escenario del evento. El paseo geom&aacute;ntico te saca de la sala para observar y sentir el campo de la ciudad sobre el terreno.</p>
       </div>
       <div class="audience-item reveal">
         <h4 data-lang="bg">Търсите общност, не публика</h4>
@@ -1471,24 +1614,71 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
 
       <div>
         <div class="logistics-note" data-lang="bg">
-          <strong>Какво е включено:</strong><br><br>
-          Пълен достъп до програмата на семинара (18&ndash;21 септември), материали и ресурси за участниците.
+          <strong>Билетът включва:</strong><br><br>
+          Петъчното посрещане, водената геомантска разходка в събота, целия неделен семинар (включително бизнес майсторския клас) и материалите за участниците.
           <br><br>
-          <span style="color:var(--text-secondary);font-size:14px;">Настаняване, пътуване, съботната вечеря и неделната фламенко вечер не са включени в цената. Препоръчваме настаняване в центъра на Валенсия за лесен достъп до залата.</span>
+          <span style="color:var(--text-secondary);font-size:15px;"><strong>Не включва:</strong> настаняване, пътуване, съботната вечеря, неделното фламенко и напитките. Това са отделни разходи.</span>
         </div>
         <div class="logistics-note" data-lang="en">
-          <strong>What's included:</strong><br><br>
-          Full access to the seminar program (18&ndash;21 September) and participant materials.
+          <strong>Your ticket includes:</strong><br><br>
+          Friday's welcome, Saturday's guided geomancy walk, the complete Sunday seminar (including the business masterclass), and participant materials.
           <br><br>
-          <span style="color:var(--text-secondary);font-size:14px;">Accommodation, travel, the Saturday group dinner, and the Sunday flamenco evening are not included. We recommend booking accommodation in Valencia's city center for easy access to the venue.</span>
+          <span style="color:var(--text-secondary);font-size:15px;"><strong>Not included:</strong> accommodation, travel, Saturday dinner, Sunday flamenco, or drinks. These are separate costs.</span>
         </div>
         <div class="logistics-note" data-lang="es">
-          <strong>Qu&eacute; incluye:</strong><br><br>
-          Acceso completo al programa del seminario (18&ndash;21 de septiembre) y materiales para los participantes.
+          <strong>Tu entrada incluye:</strong><br><br>
+          La bienvenida del viernes, el paseo geom&aacute;ntico guiado del s&aacute;bado, el seminario completo del domingo (incluida la masterclass de negocio) y los materiales para participantes.
           <br><br>
-          <span style="color:var(--text-secondary);font-size:14px;">El alojamiento, el viaje, la cena de grupo del s&aacute;bado y la velada flamenca del domingo no est&aacute;n incluidos. Recomendamos reservar alojamiento en el centro de Valencia para facilitar el acceso al lugar.</span>
+          <span style="color:var(--text-secondary);font-size:15px;"><strong>No incluye:</strong> alojamiento, viaje, cena del s&aacute;bado, flamenco del domingo ni bebidas. Son gastos aparte.</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-star"></div>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" data-lang="bg">Преди да резервирате</div>
+      <div class="section-label" data-lang="en">Before You Book</div>
+      <div class="section-label" data-lang="es">Antes de reservar</div>
+      <h2 class="section-title" data-lang="bg">Отговори на важните въпроси</h2>
+      <h2 class="section-title" data-lang="en">The Important Questions, Answered</h2>
+      <h2 class="section-title" data-lang="es">Respuestas a las preguntas importantes</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary><span data-lang="bg">Това четиридневен семинар ли е?</span><span data-lang="en">Is this a four-day seminar?</span><span data-lang="es">&iquest;Es un seminario de cuatro d&iacute;as?</span></summary>
+        <div class="faq-answer"><p data-lang="bg">Не. Преживяването обхваща петък до понеделник, но основните занимания са геомантската разходка в събота и семинарът от 10:00 до 17:00 в неделя. Петък е за пристигане и посрещане, а понеделник &mdash; за отпътуване.</p><p data-lang="en">No. The gathering runs Friday to Monday, but the core activities are Saturday's geomancy walk and Sunday's 10:00&ndash;17:00 seminar. Friday is arrival and welcome; Monday is departure.</p><p data-lang="es">No. El encuentro va de viernes a lunes, pero las actividades centrales son el paseo geom&aacute;ntico del s&aacute;bado y el seminario del domingo de 10:00 a 17:00. El viernes es la llegada y bienvenida; el lunes, la salida.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-lang="bg">Това същото ли е като онлайн курса?</span><span data-lang="en">Is this the same as the online course?</span><span data-lang="es">&iquest;Es lo mismo que el curso online?</span></summary>
+        <div class="faq-answer"><p data-lang="bg">Не. Това е отделно присъствено събитие във Валенсия с работа на място, геомантска разходка и еднодневен семинар. Онлайн програмите на Академия КОДЕР имат собствен формат и регистрация.</p><p data-lang="en">No. This is a separate in-person Valencia event with fieldwork, a geomancy walk, and a one-day seminar. CODER Academy's online programs have their own format and registration.</p><p data-lang="es">No. Este es un evento presencial independiente en Valencia con trabajo sobre el terreno, paseo geom&aacute;ntico y seminario de un d&iacute;a. Los programas online de la Academia CODER tienen su propio formato e inscripci&oacute;n.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-lang="bg">На какъв език ще се проведе?</span><span data-lang="en">What language will be used?</span><span data-lang="es">&iquest;En qu&eacute; idioma se impartir&aacute;?</span></summary>
+        <div class="faq-answer"><p data-lang="bg">Екипът отговаря на български, английски и испански. Ако имате нужда от превод по време на всички сесии, свържете се с нас преди плащане, за да потвърдим каква езикова подкрепа ще бъде налична.</p><p data-lang="en">The team can assist in Bulgarian, English, and Spanish. If you need interpretation throughout every session, contact us before paying so we can confirm what language support will be available.</p><p data-lang="es">El equipo puede atenderte en b&uacute;lgaro, ingl&eacute;s y espa&ntilde;ol. Si necesitas interpretaci&oacute;n durante todas las sesiones, cont&aacute;ctanos antes de pagar para confirmar qu&eacute; apoyo ling&uuml;&iacute;stico estar&aacute; disponible.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-lang="bg">Трябва ли да отседна в Hotel Ilunion?</span><span data-lang="en">Do I need to stay at Hotel Ilunion?</span><span data-lang="es">&iquest;Tengo que alojarme en el Hotel Ilunion?</span></summary>
+        <div class="faq-answer"><p data-lang="bg">Не. Хотелът е мястото на неделния семинар, но настаняването не е включено в билета. Можете да изберете собствено настаняване с удобен достъп до Hotel Ilunion Valencia 4.</p><p data-lang="en">No. The hotel is the Sunday seminar venue, but accommodation is not included in the ticket. You can choose your own accommodation with convenient access to Hotel Ilunion Valencia 4.</p><p data-lang="es">No. El hotel es la sede del seminario del domingo, pero el alojamiento no est&aacute; incluido en la entrada. Puedes elegir tu propio alojamiento con acceso c&oacute;modo al Hotel Ilunion Valencia 4.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-lang="bg">Каква е политиката за възстановяване?</span><span data-lang="en">What is the refund policy?</span><span data-lang="es">&iquest;Cu&aacute;l es la pol&iacute;tica de reembolso?</span></summary>
+        <div class="faq-answer"><p data-lang="bg">Закупените билети не се възстановяват, освен ако събитието не бъде официално отменено. Затова препоръчваме да потвърдите езика и всички важни за пътуването ви детайли преди плащане.</p><p data-lang="en">Tickets are non-refundable unless the event is officially cancelled. We recommend confirming the language and any travel-critical details before paying.</p><p data-lang="es">Las entradas no son reembolsables salvo cancelaci&oacute;n oficial del evento. Recomendamos confirmar el idioma y cualquier detalle importante para tu viaje antes de pagar.</p></div>
+      </details>
+    </div>
+    <div class="decision-box reveal">
+      <div class="decision-copy">
+        <h3 data-lang="bg">Не сте сигурни дали събитието е за вас?</h3><h3 data-lang="en">Not sure whether this event is for you?</h3><h3 data-lang="es">&iquest;No sabes si este evento es para ti?</h3>
+        <p data-lang="bg">Пишете директно на човек от екипа на вашия език. Ще получите ясен отговор преди да платите.</p><p data-lang="en">Message a team member directly in your language. Get a clear answer before you pay.</p><p data-lang="es">Escribe directamente a una persona del equipo en tu idioma. Recibe una respuesta clara antes de pagar.</p>
+      </div>
+      <a data-lang="bg" href="https://wa.me/359896774788?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D0%B5%D0%B9%D1%82%D0%B5%2C%20%D0%B8%D0%BC%D0%B0%D0%BC%20%D0%B2%D1%8A%D0%BF%D1%80%D0%BE%D1%81%20%D0%B7%D0%B0%20%D1%81%D1%8A%D0%B1%D0%B8%D1%82%D0%B8%D0%B5%D1%82%D0%BE%20%D0%B2%D1%8A%D0%B2%20%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%81%D0%B8%D1%8F." target="_blank" rel="noopener" class="decision-link">Попитайте Олга</a>
+      <a data-lang="en" href="https://wa.me/359895082782?text=Hi%2C%20I%20have%20a%20question%20about%20the%20Valencia%20event." target="_blank" rel="noopener" class="decision-link">Ask Nikita</a>
+      <a data-lang="es" href="https://wa.me/34611146433?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20el%20evento%20de%20Valencia." target="_blank" rel="noopener" class="decision-link">Preguntar a Iskra</a>
     </div>
   </div>
 </section>
@@ -1514,11 +1704,14 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
     <div class="cta-price-note" data-lang="en">18&ndash;21 September 2026 &middot; Hotel Ilunion Valencia 4</div>
     <div class="cta-price-note" data-lang="es">18&ndash;21 de septiembre 2026 &middot; Hotel Ilunion Valencia 4</div>
 
-    <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" class="btn-primary js-buy" id="stripe-btn">
-      <span data-lang="bg">Запази място &middot; 200 &euro;</span>
-      <span data-lang="en">Book your place &middot; &euro;200</span>
-      <span data-lang="es">Reservar plaza &middot; 200 &euro;</span>
-    </a>
+    <div class="cta-actions">
+      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" rel="noopener" class="btn-primary js-buy" id="stripe-btn">
+        <span data-lang="bg">Запази място &middot; 200 &euro;</span>
+        <span data-lang="en">Book your place &middot; &euro;200</span>
+        <span data-lang="es">Reservar plaza &middot; 200 &euro;</span>
+      </a>
+      <a href="#faq" class="btn-secondary"><span data-lang="bg">Прочетете важните въпроси</span><span data-lang="en">Read the important questions</span><span data-lang="es">Leer las preguntas importantes</span></a>
+    </div>
 
     <div class="cta-subtext" data-lang="bg">
       Ще получите потвърждение на имейла си след успешно плащане.<br><br>
