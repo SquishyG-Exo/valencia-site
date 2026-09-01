@@ -33,6 +33,15 @@
 
 <link rel="icon" type="image/png" href="images/eye-icon.png">
 <link rel="apple-touch-icon" href="https://spain.coderonline.org/images/eye-icon.png">
+<!-- Vercel Web Analytics + Speed Insights: cookieless, not gated by the Meta Pixel banner -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 <!-- Event structured data (Google rich results) -->
 <script type="application/ld+json">
 {
@@ -1772,12 +1781,15 @@ document.querySelectorAll('a.js-buy').forEach(a => { a.href = STRIPE_URL; });
 
 // Meta Pixel events. window.fbq only exists after cookie consent, so these
 // no-op for declined visitors and ad blockers alike.
+// Vercel va() is cookieless and always queued (stub in <head>).
 // InitiateCheckout on any buy button, Contact on WhatsApp / phone / email taps.
 document.querySelectorAll('a.js-buy').forEach(a => a.addEventListener('click', () => {
   if (window.fbq) fbq('track', 'InitiateCheckout', { value: 200, currency: 'EUR', content_name: 'CODER Valencia 2026' });
+  if (window.va) va('event', { name: 'InitiateCheckout', data: { value: '200', currency: 'EUR' } });
 }));
 document.querySelectorAll('a[href^="https://wa.me/"], a[href^="tel:"], a[href^="mailto:"]').forEach(a => a.addEventListener('click', () => {
   if (window.fbq) fbq('track', 'Contact');
+  if (window.va) va('event', { name: 'Contact' });
 }));
 </script>
 
