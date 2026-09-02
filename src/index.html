@@ -229,7 +229,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 .hero {
   min-height: 100vh; display: flex; flex-direction: column;
   align-items: center; justify-content: flex-end; position: relative;
-  padding: 120px 32px 0; overflow: hidden;
+  padding: 88px 32px 0; overflow: hidden;
   background: url('images/valencia-pleiads.jpg') center/cover no-repeat;
 }
 .hero::after {
@@ -252,23 +252,23 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 .hero::before { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
 
 .hero-row {
-  display: flex; align-items: flex-end; gap: 0;
+  display: flex; align-items: center; gap: 0;
   max-width: 1200px; width: 100%; position: relative; z-index: 2;
   opacity: 0; animation: fadeUp 1s ease 0.3s forwards;
 }
 
 .hero-text {
-  flex: 1; text-align: center; padding-bottom: 40px; position: relative; z-index: 2;
+  flex: 1; min-width: 0; text-align: center; padding-bottom: 12px; position: relative; z-index: 2;
 }
 
 .hero-title {
-  font-family: var(--serif); font-size: clamp(56px, 9vw, 128px); font-weight: 300;
-  line-height: 1.05; color: var(--text-primary); margin-bottom: 20px;
+  font-family: var(--serif); font-size: clamp(52px, 6.4vw, 88px); font-weight: 300;
+  line-height: 0.98; color: var(--text-primary); margin-bottom: 14px;
 }
 .hero-title em { font-style: italic; color: var(--purple-light); }
 .hero-promise {
-  max-width: 720px; margin: 0 auto 24px;
-  font-family: var(--serif); font-size: clamp(23px, 2.4vw, 34px); font-weight: 400;
+  max-width: 660px; margin: 0 auto 16px;
+  font-family: var(--serif); font-size: clamp(21px, 2vw, 28px); font-weight: 400;
   line-height: 1.35; color: var(--text-primary);
   text-wrap: balance;
 }
@@ -276,7 +276,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 9px;
-  margin-bottom: 24px; padding: 12px 26px;
+  margin-bottom: 14px; padding: 10px 22px;
   background: rgba(201, 168, 76, 0.13);
   border: 1px solid rgba(201, 168, 76, 0.5);
   border-radius: 999px; color: var(--gold-light);
@@ -288,25 +288,25 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 
 .hero-meta {
   display: flex; gap: 20px; align-items: center; justify-content: center;
-  font-size: 24px; font-weight: 500;
+  font-size: 18px; font-weight: 500;
   color: var(--text-primary); letter-spacing: 1px;
   flex-wrap: wrap;
   background: rgba(10, 0, 31, 0.7); backdrop-filter: blur(12px);
-  padding: 20px 40px; border-radius: 10px;
+  padding: 12px 24px; border-radius: 10px;
   border: 1px solid rgba(107, 61, 196, 0.3);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   width: 100%; margin: 0 auto;
 }
 .hero-meta .dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
 .hero-location {
-  font-size: 17px; font-weight: 400; color: var(--text-secondary);
+  font-size: 13px; font-weight: 400; color: var(--text-secondary);
   letter-spacing: 2px; text-transform: uppercase; width: 100%; text-align: center;
   margin-top: 4px;
 }
 
 .hero-photo-wrapper {
-  flex: 0 0 auto; width: 650px; position: relative;
-  margin-right: -80px; margin-bottom: -100px;
+  flex: 0 0 auto; width: 500px; position: relative;
+  margin-right: -50px; margin-bottom: -60px;
   overflow: hidden;
 }
 
@@ -327,7 +327,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 .hero-bottom {
   display: flex; flex-direction: column; align-items: center;
   width: 100%; position: relative; z-index: 3;
-  margin-top: auto; padding-bottom: 32px;
+  margin-top: 6px; padding-bottom: 20px;
 }
 .hero-cta {
   text-align: center; width: 100%;
@@ -351,7 +351,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 
 /* Buttons */
 .btn-primary {
-  display: block; width: 100%; max-width: 600px; margin: 0 auto; padding: 26px 40px; text-align: center;
+  display: block; width: 100%; max-width: 600px; margin: 0 auto; padding: 21px 40px; text-align: center;
   background: var(--purple); border: 1px solid var(--purple); border-radius: 6px;
   color: #fff; font-family: var(--sans); font-size: 18px; font-weight: 600;
   letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
@@ -385,7 +385,7 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
 
 /* Scroll indicator */
 .scroll-indicator {
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  display: none; flex-direction: column; align-items: center; gap: 8px;
   margin-top: 24px;
   opacity: 0; animation: fadeUp 1s ease 1.4s forwards;
 }
