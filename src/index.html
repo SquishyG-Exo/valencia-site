@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CODER Valencia 2026 — El camino cuántico del alma</title>
-<meta name="description" content="Explora los lugares de poder de Valencia y aprende a dirigir tu sensibilidad. Encuentro CODER del 18 al 21 de septiembre de 2026: paseo geomántico, seminario intensivo y masterclass de negocio. Entrada: 200 €.">
+<meta name="description" content="Explora los lugares de poder de Valencia y aprende a dirigir tu sensibilidad. Encuentro CODER del 18 al 21 de septiembre de 2026: paseo geomántico, seminario intensivo y masterclass de negocio. Últimas entradas: 150 €.">
 <link rel="canonical" href="https://spain.coderonline.org/">
 <link rel="alternate" hreflang="es" href="https://spain.coderonline.org/?lang=es">
 <link rel="alternate" hreflang="bg" href="https://spain.coderonline.org/?lang=bg">
@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://spain.coderonline.org/">
 <meta property="og:site_name" content="CODER">
 <meta property="og:title" content="CODER Valencia 2026 — El camino cuántico del alma">
-<meta property="og:description" content="Explora los lugares de poder de Valencia y aprende a dirigir tu sensibilidad. Paseo geomántico + seminario presencial, 18–21 sep 2026. Entrada: 200 €.">
+<meta property="og:description" content="Explora los lugares de poder de Valencia y aprende a dirigir tu sensibilidad. Paseo geomántico + seminario presencial, 18–21 sep 2026. Últimas entradas: 150 €.">
 <meta property="og:image" content="https://spain.coderonline.org/images/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -29,7 +29,7 @@
 <!-- Twitter / X card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CODER Valencia 2026 — El camino cuántico del alma">
-<meta name="twitter:description" content="Lugares de poder, práctica energética y seminario presencial en Valencia, 18–21 sep 2026. Entrada: 200 €.">
+<meta name="twitter:description" content="Lugares de poder, práctica energética y seminario presencial en Valencia, 18–21 sep 2026. Últimas entradas: 150 €.">
 <meta name="twitter:image" content="https://spain.coderonline.org/images/og-cover.jpg">
 <meta name="twitter:image:alt" content="CODER Valencia 2026">
 
@@ -76,10 +76,10 @@
   ],
   "offers": {
     "@type": "Offer",
-    "price": "200",
+    "price": "150",
     "priceCurrency": "EUR",
-    "availability": "https://schema.org/InStock",
-    "url": "https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09",
+    "availability": "https://schema.org/LimitedAvailability",
+    "url": "https://buy.stripe.com/aFa4gB3BW5Jv4i63VHfnO0O",
     "validFrom": "2026-06-19T00:00:00+02:00"
   }
 }
@@ -698,7 +698,63 @@ html.lang-en .speaker-tag[data-lang="en"], html.lang-es .speaker-tag[data-lang="
   text-shadow: 0 0 40px rgba(201, 168, 76, 0.3);
 }
 .cta-price-note {
-  font-size: 17px; color: var(--text-muted); margin-bottom: 48px; letter-spacing: 1px;
+  font-size: 17px; color: var(--text-muted); margin-bottom: 28px; letter-spacing: 1px;
+}
+
+/* PROMO: last tickets, struck-through old price, countdown clock */
+.promo-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 20px; border-radius: 999px;
+  background: rgba(201, 168, 76, 0.13); border: 1px solid rgba(201, 168, 76, 0.5);
+  color: var(--gold-light); font-family: var(--sans); font-size: 14px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+}
+.promo-tag::before { content: '\2726'; font-size: 11px; }
+s.price-old, .cta-price s, .hero-price s {
+  color: var(--text-muted); font-weight: 300;
+  text-decoration: line-through; text-decoration-color: rgba(201, 168, 76, 0.75); text-decoration-thickness: 2px;
+}
+.hero-price s { margin-right: 4px; font-weight: 400; }
+.cta-price s { font-size: 0.5em; vertical-align: middle; margin-right: 10px; text-shadow: none; }
+.detail-value s.price-old { font-size: 0.7em; margin-right: 6px; }
+.countdown { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.countdown-label { font-size: 13px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--text-secondary); }
+.countdown-grid { display: flex; gap: 10px; }
+.countdown-cell {
+  min-width: 82px; padding: 12px 10px; border-radius: 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  background: rgba(10, 0, 31, 0.72); backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+.countdown-num {
+  font-family: var(--serif); font-size: 40px; font-weight: 400; line-height: 1;
+  color: var(--gold-light); font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 24px rgba(201, 168, 76, 0.35);
+}
+.countdown-unit { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--text-secondary); }
+.countdown-started { display: none; font-family: var(--serif); font-size: 24px; color: var(--gold-light); }
+.countdown.countdown-done .countdown-label, .countdown.countdown-done .countdown-grid { display: none; }
+.countdown.countdown-done .countdown-started { display: block; }
+.cta .promo-tag { margin-bottom: 20px; }
+.cta .countdown { margin: 0 auto 40px; }
+/* hero variant: one compact row (tag + clock) so the buy button stays above the fold */
+.hero-promo {
+  display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap;
+  margin-bottom: 14px; opacity: 0; animation: fadeUp 1s ease 0.6s forwards;
+}
+.hero-promo .countdown-label { display: none; }
+.hero-promo .countdown-grid { gap: 8px; }
+.hero-promo .countdown-cell { min-width: 62px; padding: 8px 8px; gap: 2px; }
+.hero-promo .countdown-num { font-size: 28px; }
+.hero-promo .countdown-unit { font-size: 10px; letter-spacing: 1.5px; }
+@media (max-width: 768px) {
+  .countdown-cell { min-width: 68px; padding: 10px 6px; }
+  .countdown-num { font-size: 30px; }
+  .countdown-grid { gap: 8px; }
+  .hero-promo { gap: 10px; margin-bottom: 12px; }
+  .hero-promo .countdown-cell { min-width: 58px; }
+  .hero-promo .countdown-num { font-size: 24px; }
 }
 /* INLINE CTA */
 .section-cta {
@@ -1151,7 +1207,7 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
         <span class="dot"></span>
         <span>Hotel Ilunion Valencia 4</span>
         <span class="dot"></span>
-        <span>&euro;200</span>
+        <span class="hero-price"><s>&euro;200</s> &euro;150</span>
         <div class="hero-location"><span data-lang="bg">Валенсия, Испания</span><span data-lang="en">Valencia, Spain</span><span data-lang="es">Valencia, Espa&ntilde;a</span></div>
       </div>
     </div>
@@ -1161,9 +1217,22 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
   </div>
 
   <div class="hero-bottom">
+    <div class="hero-promo">
+      <div class="promo-tag"><span data-lang="bg">Последни билети</span><span data-lang="en">Last tickets</span><span data-lang="es">&Uacute;ltimas entradas</span></div>
+      <div class="countdown" data-countdown>
+        <div class="countdown-label"><span data-lang="bg">До началото остават</span><span data-lang="en">Starts in</span><span data-lang="es">Empieza en</span></div>
+        <div class="countdown-grid">
+          <div class="countdown-cell"><span class="countdown-num" data-cd="d">&ndash;</span><span class="countdown-unit"><span data-lang="bg">дни</span><span data-lang="en">days</span><span data-lang="es">d&iacute;as</span></span></div>
+          <div class="countdown-cell"><span class="countdown-num" data-cd="h">&ndash;</span><span class="countdown-unit"><span data-lang="bg">часа</span><span data-lang="en">hours</span><span data-lang="es">horas</span></span></div>
+          <div class="countdown-cell"><span class="countdown-num" data-cd="m">&ndash;</span><span class="countdown-unit"><span data-lang="bg">мин</span><span data-lang="en">min</span><span data-lang="es">min</span></span></div>
+          <div class="countdown-cell"><span class="countdown-num" data-cd="s">&ndash;</span><span class="countdown-unit"><span data-lang="bg">сек</span><span data-lang="en">sec</span><span data-lang="es">seg</span></span></div>
+        </div>
+        <div class="countdown-started"><span data-lang="bg">Събитието започна</span><span data-lang="en">The event has begun</span><span data-lang="es">El evento ha comenzado</span></div>
+      </div>
+    </div>
     <div class="hero-cta">
       <div class="cta-actions">
-        <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" rel="noopener" class="btn-primary js-buy"><span data-lang="bg">Запази място &middot; 200 &euro;</span><span data-lang="en">Book your place &middot; &euro;200</span><span data-lang="es">Reservar plaza &middot; 200 &euro;</span></a>
+        <a href="https://buy.stripe.com/aFa4gB3BW5Jv4i63VHfnO0O" target="_blank" rel="noopener" class="btn-primary js-buy"><span data-lang="bg">Запази място &middot; 150 &euro;</span><span data-lang="en">Book your place &middot; &euro;150</span><span data-lang="es">Reservar plaza &middot; 150 &euro;</span></a>
         <a href="#valencia-film" class="btn-secondary"><span data-lang="bg">Защо Валенсия? Гледайте</span><span data-lang="en">Why Valencia? Watch</span><span data-lang="es">&iquest;Por qu&eacute; Valencia? Ver</span></a>
       </div>
     </div>
@@ -1444,7 +1513,7 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
 
     <div class="section-cta reveal">
       <div class="cta-actions">
-        <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" rel="noopener" class="btn-primary js-buy"><span data-lang="bg">Запази място &middot; 200 &euro;</span><span data-lang="en">Book your place &middot; &euro;200</span><span data-lang="es">Reservar plaza &middot; 200 &euro;</span></a>
+        <a href="https://buy.stripe.com/aFa4gB3BW5Jv4i63VHfnO0O" target="_blank" rel="noopener" class="btn-primary js-buy"><span data-lang="bg">Запази място &middot; 150 &euro;</span><span data-lang="en">Book your place &middot; &euro;150</span><span data-lang="es">Reservar plaza &middot; 150 &euro;</span></a>
         <a href="#details" class="btn-secondary"><span data-lang="bg">Какво точно е включено?</span><span data-lang="en">What exactly is included?</span><span data-lang="es">&iquest;Qu&eacute; incluye exactamente?</span></a>
       </div>
     </div>
@@ -1597,10 +1666,10 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
           <div class="detail-label" data-lang="bg">Цена</div>
           <div class="detail-label" data-lang="en">Price</div>
           <div class="detail-label" data-lang="es">Precio</div>
-          <div class="detail-value">&euro;200</div>
-          <div class="detail-note" data-lang="bg">391.17 лв &middot; ДДС включен</div>
-          <div class="detail-note" data-lang="en">VAT included</div>
-          <div class="detail-note" data-lang="es">IVA incluido</div>
+          <div class="detail-value"><s class="price-old">&euro;200</s> &euro;150</div>
+          <div class="detail-note" data-lang="bg">Последни билети &middot; 293.37 лв &middot; ДДС включен</div>
+          <div class="detail-note" data-lang="en">Last tickets &middot; VAT included</div>
+          <div class="detail-note" data-lang="es">&Uacute;ltimas entradas &middot; IVA incluido</div>
         </div>
         <div class="detail-block">
           <div class="detail-label" data-lang="bg">Език</div>
@@ -1699,16 +1768,27 @@ body.consent-open .contact-fab { opacity: 0 !important; pointer-events: none !im
     <div class="cta-tagline" data-lang="bg">&ldquo;Тук спираме да търсим отговорите навън.<br>Тук ставаме отговора.&rdquo;</div>
     <div class="cta-tagline" data-lang="en">&ldquo;Here we stop looking for answers outside.<br>Here we become the answer.&rdquo;</div>
     <div class="cta-tagline" data-lang="es">&ldquo;Aqu&iacute; dejamos de buscar respuestas afuera.<br>Aqu&iacute; nos convertimos en la respuesta.&rdquo;</div>
-    <div class="cta-price">&euro;200</div>
+    <div><div class="promo-tag"><span data-lang="bg">Последни билети</span><span data-lang="en">Last tickets</span><span data-lang="es">&Uacute;ltimas entradas</span></div></div>
+    <div class="cta-price"><s>&euro;200</s>&euro;150</div>
     <div class="cta-price-note" data-lang="bg">18&ndash;21 септември 2026 &middot; Hotel Ilunion Valencia 4</div>
     <div class="cta-price-note" data-lang="en">18&ndash;21 September 2026 &middot; Hotel Ilunion Valencia 4</div>
     <div class="cta-price-note" data-lang="es">18&ndash;21 de septiembre 2026 &middot; Hotel Ilunion Valencia 4</div>
+    <div class="countdown" data-countdown>
+      <div class="countdown-label"><span data-lang="bg">До началото остават</span><span data-lang="en">Starts in</span><span data-lang="es">Empieza en</span></div>
+      <div class="countdown-grid">
+        <div class="countdown-cell"><span class="countdown-num" data-cd="d">&ndash;</span><span class="countdown-unit"><span data-lang="bg">дни</span><span data-lang="en">days</span><span data-lang="es">d&iacute;as</span></span></div>
+        <div class="countdown-cell"><span class="countdown-num" data-cd="h">&ndash;</span><span class="countdown-unit"><span data-lang="bg">часа</span><span data-lang="en">hours</span><span data-lang="es">horas</span></span></div>
+        <div class="countdown-cell"><span class="countdown-num" data-cd="m">&ndash;</span><span class="countdown-unit"><span data-lang="bg">мин</span><span data-lang="en">min</span><span data-lang="es">min</span></span></div>
+        <div class="countdown-cell"><span class="countdown-num" data-cd="s">&ndash;</span><span class="countdown-unit"><span data-lang="bg">сек</span><span data-lang="en">sec</span><span data-lang="es">seg</span></span></div>
+      </div>
+      <div class="countdown-started"><span data-lang="bg">Събитието започна</span><span data-lang="en">The event has begun</span><span data-lang="es">El evento ha comenzado</span></div>
+    </div>
 
     <div class="cta-actions">
-      <a href="https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09" target="_blank" rel="noopener" class="btn-primary js-buy" id="stripe-btn">
-        <span data-lang="bg">Запази място &middot; 200 &euro;</span>
-        <span data-lang="en">Book your place &middot; &euro;200</span>
-        <span data-lang="es">Reservar plaza &middot; 200 &euro;</span>
+      <a href="https://buy.stripe.com/aFa4gB3BW5Jv4i63VHfnO0O" target="_blank" rel="noopener" class="btn-primary js-buy" id="stripe-btn">
+        <span data-lang="bg">Запази място &middot; 150 &euro;</span>
+        <span data-lang="en">Book your place &middot; &euro;150</span>
+        <span data-lang="es">Reservar plaza &middot; 150 &euro;</span>
       </a>
       <a href="#faq" class="btn-secondary"><span data-lang="bg">Прочетете важните въпроси</span><span data-lang="en">Read the important questions</span><span data-lang="es">Leer las preguntas importantes</span></a>
     </div>
@@ -1969,7 +2049,7 @@ window.addEventListener('scroll', () => {
 updateFab();
 
 // Single source of truth for the Stripe checkout link (markup hrefs stay as the no-JS fallback)
-const STRIPE_URL = 'https://buy.stripe.com/bJeeVf2xSgo9g0OfEpfnO09';
+const STRIPE_URL = 'https://buy.stripe.com/aFa4gB3BW5Jv4i63VHfnO0O';
 document.querySelectorAll('a.js-buy').forEach(a => { a.href = STRIPE_URL; });
 
 // Meta Pixel events. window.fbq only exists after cookie consent, so these
@@ -1977,13 +2057,33 @@ document.querySelectorAll('a.js-buy').forEach(a => { a.href = STRIPE_URL; });
 // Vercel va() is cookieless and always queued (stub in <head>).
 // InitiateCheckout on any buy button, Contact on WhatsApp / phone / email taps.
 document.querySelectorAll('a.js-buy').forEach(a => a.addEventListener('click', () => {
-  if (window.fbq) fbq('track', 'InitiateCheckout', { value: 200, currency: 'EUR', content_name: 'CODER Valencia 2026' });
-  if (window.va) va('event', { name: 'InitiateCheckout', data: { value: '200', currency: 'EUR' } });
+  if (window.fbq) fbq('track', 'InitiateCheckout', { value: 150, currency: 'EUR', content_name: 'CODER Valencia 2026' });
+  if (window.va) va('event', { name: 'InitiateCheckout', data: { value: '150', currency: 'EUR' } });
 }));
 document.querySelectorAll('a[href^="https://wa.me/"], a[href^="tel:"], a[href^="mailto:"]').forEach(a => a.addEventListener('click', () => {
   if (window.fbq) fbq('track', 'Contact');
   if (window.va) va('event', { name: 'Contact' });
 }));
+
+// Countdown to the Friday evening gathering (Valencia runs on CEST, UTC+2, in September).
+// Every [data-countdown] block on the page ticks off the same clock.
+const EVENT_START = new Date('2026-09-18T18:00:00+02:00').getTime();
+const countdowns = document.querySelectorAll('[data-countdown]');
+function tickCountdown() {
+  const left = Math.max(0, EVENT_START - Date.now());
+  const pad = (n) => String(n).padStart(2, '0');
+  const parts = {
+    d: String(Math.floor(left / 86400000)),
+    h: pad(Math.floor(left / 3600000) % 24),
+    m: pad(Math.floor(left / 60000) % 60),
+    s: pad(Math.floor(left / 1000) % 60)
+  };
+  countdowns.forEach(el => {
+    Object.keys(parts).forEach(k => { el.querySelector('[data-cd="' + k + '"]').textContent = parts[k]; });
+    el.classList.toggle('countdown-done', left === 0);
+  });
+}
+if (countdowns.length) { tickCountdown(); setInterval(tickCountdown, 1000); }
 </script>
 
 </body>
